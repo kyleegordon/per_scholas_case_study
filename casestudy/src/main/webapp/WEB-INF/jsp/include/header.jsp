@@ -16,7 +16,7 @@
 <body>
 <nav class="navbar">
     <div class="navbar__container">
-        <a href="../index.jsp" id="navbar__logo"><i class="fas fa-dice-d20"></i>NameHere</a>
+        <a href="/index" id="navbar__logo"><i class="fas fa-dice-d20"></i>NameHere</a>
         <div class="navbar__toggle" id="mobile-menu">
             <!-- These are the 3 bars for the mobile menu icon -->
             <span class="bar"></span>
@@ -25,16 +25,16 @@
         </div>
         <ul class="navbar__menu">
             <li class="navbar__item">
-                <a href="index.jsp" class="navbar__links">Home</a>
+                <a href="/index" class="navbar__links">Home</a>
             </li>
             <li class="navbar__item">
-                <a href="about.jsp" class="navbar__links">About</a>
+                <a href="/about" class="navbar__links">About</a>
             </li>
             <li class="navbar__item">
-                <a href="assessment.jsp" class="navbar__links">Assessment</a>
+                <a href="/assessment" class="navbar__links">Assessment</a>
             </li>
             <li class="navbar__btn">
-                <a href="signup.jsp" class="button">Sign Up</a>
+                <a href="/signup" class="button">Sign Up</a>
             </li>
         </ul>
     </div>

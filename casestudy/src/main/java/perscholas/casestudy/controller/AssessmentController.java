@@ -6,16 +6,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class SignUpController {
+public class AssessmentController {
 
-    @RequestMapping(value = { "/signup" }, method = RequestMethod.GET)
-    public ModelAndView signup() throws Exception {
+    @RequestMapping(value = { "/assessment" }, method = RequestMethod.GET)
+    public ModelAndView assessment() throws Exception {
         ModelAndView response = new ModelAndView();
 
         //refers to the name of the jsp file
-        response.setViewName("signup");
+        response.setViewName("assessment");
 
         return response;
     }
 }
-
