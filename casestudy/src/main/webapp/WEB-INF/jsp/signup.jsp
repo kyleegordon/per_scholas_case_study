@@ -32,6 +32,14 @@
                     </tr>
                     <tr>
                         <td>
+                            <label for="confirm_password">Confirm Password</label>
+                        </td>
+                        <td>
+                            <input type="password" id="confirm_password" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <label for="phone">Contact Phone #</label>
                         </td>
                         <td>
