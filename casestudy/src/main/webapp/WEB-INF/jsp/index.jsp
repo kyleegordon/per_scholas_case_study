@@ -9,7 +9,7 @@
             <button class="main__btn"><a href="/signup">Get Started</a></button>
         </div>
         <div class="main__img--container">
-            <img src="images/undraw_surveillance_re_8tkl.svg" alt="surveillance image" id="main__img">
+            <img src="../../../pub/images/undraw_surveillance_re_8tkl.svg" alt="surveillance image" id="main__img">
         </div>
     </div>
 </div>

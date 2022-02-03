@@ -100,7 +100,7 @@
             </table>
         </div>
         <div class="main__img--container">
-            <img src="images/undraw_programmer_re_owql.svg" alt="cyber professional image" id="main__img">
+            <img src="../../../pub/images/undraw_programmer_re_owql.svg" alt="cyber professional image" id="main__img">
         </div>
     </div>
 </div>
