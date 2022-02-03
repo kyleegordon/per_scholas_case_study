@@ -4,7 +4,7 @@
     <div class="main__container">
         <div class="main__content">
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Create an Account</h3>
-            <table>
+            <table id="signup_table">
                 <form name="signupForm">
                     <tr>
                         <td>
@@ -105,7 +105,7 @@
     </div>
 </div>
 
-<div class="services"></div>
+<div class="services" id="signup_services"></div>
 
 <jsp:include page="include/footer.jsp" />
 <script src="../../pub/js/signup_form.js"></script>
