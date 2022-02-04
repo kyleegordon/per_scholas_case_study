@@ -26,6 +26,12 @@ public class User{
     @Column(name = "email")
     private String email;
 
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "confirm_password")
+    private String confirmPassword;
+
     @Column(name = "phone")
     private String phone;
 

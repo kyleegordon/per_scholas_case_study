@@ -4,9 +4,13 @@ import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import perscholas.casestudy.database.entity.User;
 import perscholas.casestudy.validation.TwoFieldsAreEqual;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Getter
@@ -34,7 +38,7 @@ public class SignupFormBean {
     @NotEmpty
     private String website;
 
-    @NotEmpty
+    @NotNull
     private Integer numEmployees;
 
     @NotEmpty
@@ -53,6 +57,10 @@ public class SignupFormBean {
     private boolean creditData;
 
     private boolean otherData;
+
+    private List<String> errorMessages = new ArrayList<>();
+
+    private List<User> userList = new ArrayList<>();
 
     @Override
     public String toString() {

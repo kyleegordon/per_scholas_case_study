@@ -1,83 +1,91 @@
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="include/header.jsp" />
 
 <div class="main">
+    <div style="color: red;">
+        <!--    prints errors on page-->
+        <c:forEach var = "message" items = "${formBeanKey.errorMessages}" >
+        <p><c:out value = "${message}"/><p>
+        </c:forEach>
+    </div>
+
     <div class="main__container">
         <div class="main__content">
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Create an Account</h3>
             <table id="signup_table">
-                <form name="signupForm">
+                <form name="signupForm" method="GET" action="/signupSubmit">
                     <tr>
                         <td>
-                            <label for="company_name">Company Name</label>
+                            Company Name
                         </td>
                         <td>
-                            <input type="text" id="company_name" required />
+                            <input type="text" name="companyName" value="${formBeanKey.companyName}"required />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="email">Contact Email</label>
+                            Contact Email
                         </td>
                         <td>
-                            <input type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" required/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="password">Password</label>
-                        </td>
-                        <td>
-                            <input type="password" id="password" required/>
+                            <input type="email" name="email" value="${formBeanKey.email}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" required/>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="confirm_password">Confirm Password</label>
+                            Password
                         </td>
                         <td>
-                            <input type="password" id="confirm_password" required/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="phone">Contact Phone #</label>
-                        </td>
-                        <td>
-                            <input type="tel" id="phone" placeholder="555-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/>
+                            <input type="password" name="password" value="${formBeanKey.password}" required/>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="website">Website URL</label>
+                            Confirm Password
                         </td>
                         <td>
-                            <input type="text" id="website" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="employees">Number of Employees</label>
-                        </td>
-                        <td>
-                            <input type="number" id="employees" min="1"/>
+                            <input type="password" name="confirmPassword" value="${formBeanKey.confirmPassword}" required/>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="industry">Industry</label>
+                            Contact Phone #
                         </td>
                         <td>
-                            <input type="text" id="industry" />
+                            <input type="tel" name="phone" value="${formBeanKey.phone}" placeholder="555-555-5555" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="security_professionals">Do you employ security professionals</label>
+                            Website URL
                         </td>
                         <td>
-                            <input type="radio" id="yes" name="security_professionals" value="yes">
+                            <input type="text" name="website" value="${formBeanKey.website}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Number of Employees
+                        </td>
+                        <td>
+                            <input type="number" name="numEmployees" value="${formBeanKey.numEmployees}" min="1"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Industry
+                        </td>
+                        <td>
+                            <input type="text" name="industry" value="${formBeanKey.industry}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="securityProfessionals">Do you employ security professionals</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="yes" name="securityProfessionals" value="yes">
                             <label for="yes">Yes</label>
-                            <input type="radio" id="no" name="security_professionals" value="no" checked>
+                            <input type="radio" id="no" name="securityProfessionals" value="no" checked>
                             <label for="no">No</label>
                         </td>
                     </tr>
@@ -101,7 +109,7 @@
                     </tr>
                     <tr style="text-align: center;">
                         <td colspan="2">
-                            <input type="button" value="Create Account" onclick="return collectData()" style="text-align: center; padding: 5px; margin-top: 10px;">
+                            <button type="submit" style="text-align: center; padding: 5px; margin-top: 10px;">Create Account</button>
                         </td>
                     </tr>
                 </form>
@@ -112,6 +120,7 @@
         </div>
     </div>
 </div>
+
 
 <div class="services" id="signup_services"></div>
 
