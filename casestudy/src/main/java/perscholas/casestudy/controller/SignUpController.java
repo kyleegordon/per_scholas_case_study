@@ -29,12 +29,11 @@ public class SignUpController {
         return response;
     }
 
-    @RequestMapping(value = "/signupSubmit", method = RequestMethod.GET)
+    @RequestMapping(value = "/signupSubmit", method = RequestMethod.POST)
     public ModelAndView signupSubmit(@Valid SignupFormBean form, BindingResult errors) throws Exception {
         ModelAndView response = new ModelAndView();
         response.addObject("formBeanKey", form);
         response.setViewName("signup");
-        System.out.println("/signupSubmit has been accessed");
 
         //Create
         if (errors.hasErrors()) {
@@ -58,7 +57,9 @@ public class SignUpController {
             user.setNumEmployees(form.getNumEmployees());
             user.setIndustry(form.getIndustry());
             userDao.save(user);
-            response.setViewName("assessment");
+
+            response.addObject("userEmail", user.getEmail());
+            response.setViewName("redirect:/assessment");
         }
         return response;
     }
