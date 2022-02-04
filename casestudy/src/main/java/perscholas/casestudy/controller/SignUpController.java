@@ -35,9 +35,8 @@ public class SignUpController {
         response.addObject("formBeanKey", form);
         response.setViewName("signup");
         System.out.println("/signupSubmit has been accessed");
-        System.out.println(form);
 
-        //Create from CRUD
+        //Create
         if (errors.hasErrors()) {
             for (FieldError error : errors.getFieldErrors()) {
                 form.getErrorMessages().add(error.getDefaultMessage());
@@ -58,7 +57,6 @@ public class SignUpController {
             user.setWebsite(form.getWebsite());
             user.setNumEmployees(form.getNumEmployees());
             user.setIndustry(form.getIndustry());
-            System.out.println(user);
             userDao.save(user);
             response.setViewName("assessment");
         }
