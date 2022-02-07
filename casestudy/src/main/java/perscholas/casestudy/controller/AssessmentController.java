@@ -13,6 +13,7 @@ import perscholas.casestudy.database.dao.UserDAO;
 import perscholas.casestudy.database.entity.Assessment;
 import perscholas.casestudy.database.entity.User;
 import perscholas.casestudy.form.AssessmentFormBean;
+import perscholas.casestudy.form.SignupFormBean;
 
 import javax.validation.Valid;
 
@@ -40,13 +41,13 @@ public class AssessmentController {
     //The below method does not work yet, can't figure out how to pass the email from the previous page
     //to this one so that I am able to assign the assessment results to the correct user_id
     @RequestMapping(value = "/assessmentSubmit", method = RequestMethod.POST)
-    public ModelAndView assessmentSubmit(@Valid AssessmentFormBean form, BindingResult errors,
+    public ModelAndView assessmentSubmit(@Valid AssessmentFormBean form, SignupFormBean signupForm, BindingResult errors,
                                          @RequestParam String email) throws Exception {
         ModelAndView response = new ModelAndView();
-//        response.addObject("formBeanKey", form);
+        response.addObject("formBeanKey", signupForm);
         response.setViewName("assessment");
 
-        System.out.println("Email: " + email);
+        System.out.println("Email: " + signupForm.getEmail());
 
         //Create
         if (errors.hasErrors()) {
