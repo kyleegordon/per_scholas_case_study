@@ -1,4 +1,4 @@
-<jsp:include page="include/header.jsp" />
+<jsp:include page="../include/header.jsp" />
 
 <div class="main">
     <div class="main__container" id="assessment_container" style="grid-template-columns: 1fr; justify-content: center;">
@@ -193,7 +193,7 @@
 <div class="services" id="assessment_services"></div>
 
 
-<jsp:include page="include/footer.jsp" />
-<script src="../../pub/js/assessment_form.js"></script>
+<jsp:include page="../include/footer.jsp" />
+<script src="../../../pub/js/assessment_form.js"></script>
 </body>
 </html

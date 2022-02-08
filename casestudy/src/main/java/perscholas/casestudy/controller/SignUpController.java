@@ -71,7 +71,7 @@ public class SignUpController {
             userDao.save(user);
 
             response.addObject("userEmail", user.getEmail());
-            response.setViewName("redirect:/assessment");
+            response.setViewName("redirect:/login/login");
         }
         return response;
     }

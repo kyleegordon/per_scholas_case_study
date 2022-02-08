@@ -7,28 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-
 @Controller
-@RequestMapping("/login")
-public class LoginController {
+@RequestMapping("/user")
+public class AccountController {
 
     public static final Logger LOG = LoggerFactory.getLogger(LoginController.class);
 
-    @RequestMapping(value = {  "/login" }, method = RequestMethod.GET)
-    public ModelAndView login() throws Exception {
+    @RequestMapping(value = {"/account"}, method = RequestMethod.GET)
+    public ModelAndView userAccount() throws Exception {
         ModelAndView response = new ModelAndView();
-        response.setViewName("login/login");
+        response.setViewName("user/account");
         return response;
     }
-
-
-    @RequestMapping(value = {  "/logoutSuccess" }, method = RequestMethod.GET)
-    public ModelAndView logoutSuccess() throws Exception {
-        ModelAndView response = new ModelAndView();
-        response.setViewName("redirect:/index");
-        return response;
-    }
-
 
 
 }

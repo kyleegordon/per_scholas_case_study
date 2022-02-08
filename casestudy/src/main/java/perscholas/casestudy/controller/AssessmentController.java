@@ -18,6 +18,7 @@ import perscholas.casestudy.form.SignupFormBean;
 import javax.validation.Valid;
 
 @Controller
+@RequestMapping("/user")
 public class AssessmentController {
 
     @Autowired
@@ -31,7 +32,7 @@ public class AssessmentController {
         ModelAndView response = new ModelAndView();
 
         //refers to the name of the jsp file
-        response.setViewName("assessment");
+        response.setViewName("user/assessment");
 
         return response;
     }
@@ -45,7 +46,7 @@ public class AssessmentController {
                                          @RequestParam String email) throws Exception {
         ModelAndView response = new ModelAndView();
         response.addObject("formBeanKey", signupForm);
-        response.setViewName("assessment");
+        response.setViewName("user/assessment");
 
         System.out.println("Email: " + signupForm.getEmail());
 
@@ -57,7 +58,7 @@ public class AssessmentController {
             }
 
             response.addObject("formBeanKey", form);
-            response.setViewName("assessment");
+            response.setViewName("user/assessment");
         } else {
             //there are no errors, create new user
             User user = userDao.findByEmail(email);
