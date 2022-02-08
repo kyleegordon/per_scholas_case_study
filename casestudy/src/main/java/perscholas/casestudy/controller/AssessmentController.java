@@ -52,9 +52,8 @@ public class AssessmentController {
         User user = userDao.findByEmail(currentPrincipalName);
         response.addObject("userProfile", user);
 
-        System.out.println("Q1: " + form.getQuestion1());
-        System.out.println("Q2: " + form.getQuestion2());
 
+        //collects data from assessment form and saves it to assessment database with user_id as a foreign key
         Assessment assessment = new Assessment();
         assessment.setId(user.getId());
         assessment.setQuestion1(form.getQuestion1());
@@ -75,8 +74,8 @@ public class AssessmentController {
         assessment.setQuestion16(form.getQuestion16());
         assessment.setQuestion17(form.getQuestion17());
         assessment.setQuestion18(form.getQuestion18());
-        System.out.println("Assessment: " + assessment);
-        //Still need to calculate and add security score
+
+        //TODO Still need to calculate and add security score
         assessmentDao.save(assessment);
         response.setViewName("redirect:/user/account");
         return response;
