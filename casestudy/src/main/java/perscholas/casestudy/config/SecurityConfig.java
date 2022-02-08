@@ -53,12 +53,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //this is where user will be redirected on sucessful logout
                 .logoutSuccessUrl("/login/logoutSuccess")
                 .and()
-                .rememberMe()
-                //this configuration is not required for the class or the case study, but is nice to have
-                .key("SR_KEY")
-                .tokenValiditySeconds(60*60*24*2)//seconds equivalent of 2 days
-                .rememberMeParameter("remember-me")
-                .and()
                 .exceptionHandling()
                 //url for the access denied page, can customize if desired
                 .accessDeniedPage("/error/404");
