@@ -13,6 +13,10 @@ public class AccountController {
 
     public static final Logger LOG = LoggerFactory.getLogger(LoginController.class);
 
+
+    //TODO access user data from database to populate the User Info form
+    //TODO add Update functionality for user table
+    //TODO add Delete functionality for user table
     @RequestMapping(value = {"/account"}, method = RequestMethod.GET)
     public ModelAndView userAccount() throws Exception {
         ModelAndView response = new ModelAndView();
