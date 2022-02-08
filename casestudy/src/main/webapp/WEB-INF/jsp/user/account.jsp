@@ -4,7 +4,7 @@
     <div class="main__container">
         <div class="main__content">
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">User Info</h3>
-            <table id="signup_table">
+            <table id="account_table">
                 <form name="accountForm" method="POST" action="/accountSubmit">
                     <tr>
                         <td>
@@ -103,7 +103,7 @@
                         <td>
                             <button type="submit" style="text-align: center; padding: 5px; margin-top: 10px;">Edit User Info</button>
                         </td>
-                        <td><a href="">Delete Account</a></td>
+                        <td><button style="text-align: center; padding: 5px; margin-top: 10px;"><a href="">Delete Account</a></button></td>
                     </tr>
                 </form>
             </table>

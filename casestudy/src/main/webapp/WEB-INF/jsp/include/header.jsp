@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,21 +31,36 @@
             <li class="navbar__item">
                 <a href="/about" class="navbar__links">About</a>
             </li>
-            <li class="navbar__item">
-                <a href="/user/assessment" class="navbar__links">Assessment</a>
-            </li>
-            <li class="navbar__item">
-                <a href="/user/account" class="navbar__links">Account</a>
-            </li>
-            <li class="navbar__item">
-                <a href="/login/login" class="navbar__links">Login</a>
-            </li>
-            <li class="navbar__item">
-                <a href="/login/logout" class="navbar__links">Logout</a>
-            </li>
-            <li class="navbar__btn">
-                <a href="/signup" class="button">Sign Up</a>
-            </li>
+            <%--        only displays assessment button if user is logged in--%>
+            <sec:authorize access="isAuthenticated()">
+                <li class="navbar__item">
+                    <a href="/user/assessment" class="navbar__links">Assessment</a>
+                </li>
+            </sec:authorize>
+            <%--        only displays login link if not currently logged in to an account--%>
+            <sec:authorize access="!isAuthenticated()">
+                <li class="navbar__item">
+                    <a href="/login/login" class="navbar__links">Login</a>
+                </li>
+            </sec:authorize>
+            <%--        only displays logout button if user is logged in--%>
+            <sec:authorize access="isAuthenticated()">
+                <li class="navbar__item">
+                    <a href="/login/logout" class="navbar__links">Logout</a>
+                </li>
+            </sec:authorize>
+            <%--        only displays signup link if not currently logged in to an account--%>
+            <sec:authorize access="!isAuthenticated()">
+                <li class="navbar__btn">
+                    <a href="/signup" class="button">Sign Up</a>
+                </li>
+            </sec:authorize>
+            <%--        only displays account button if user is logged in--%>
+            <sec:authorize access="isAuthenticated()">
+                <li class="navbar__btn">
+                    <a href="/user/account" class="button">Account</a>
+                </li>
+            </sec:authorize>
         </ul>
     </div>
 </nav>
