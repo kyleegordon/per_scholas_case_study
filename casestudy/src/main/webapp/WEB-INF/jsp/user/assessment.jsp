@@ -7,10 +7,10 @@
                 <caption>
                     <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Security Assessment</h3>
                     Please use the sliding scale to assess your current security practices:<br>
-                    0 = We don't do this <br>
+                    1 = We don't do this <br>
                     5 = The process is automated
                 </caption>
-                <form name="assessmentForm" method="POST" action="/assessmentSubmit">
+                <form name="assessmentForm" method="POST" action="/user/assessmentSubmit">
                     <input type="hidden" name="email" value="${formBeanKey.email}">
 
                     <tr>
@@ -23,12 +23,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="range" class="slider" id="question1" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question1">0</output>
+                            <input type="range" class="slider" id="question1" name="question1" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                         <td>
-                            <input type="range" class="slider" id="question2" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question2">0</output>
+                            <input type="range" class="slider" id="question2" name="question2" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                     </tr>
                     <tr>
@@ -41,12 +41,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="range" class="slider" id="question3" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question3">0</output>
+                            <input type="range" class="slider" id="question3" name="question3" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                         <td>
-                            <input type="range" class="slider" id="question4" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question4">0</output>
+                            <input type="range" class="slider" id="question4" name="question4" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                     </tr>
                     <tr>
@@ -59,12 +59,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="range" class="slider" id="question5" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question5">0</output>
+                            <input type="range" class="slider" id="question5" name="question5" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                         <td>
-                            <input type="range" class="slider" id="question6" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question6">0</output>
+                            <input type="range" class="slider" id="question6" name="question6" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                     </tr>
                     <tr>
@@ -77,12 +77,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="range" class="slider" id="question7" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question7">0</output>
+                            <input type="range" class="slider" id="question7" name="question7" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                         <td>
-                            <input type="range" class="slider" id="question8" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question8">0</output>
+                            <input type="range" class="slider" id="question8" name="question8" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                     </tr>
                     <tr>
@@ -95,12 +95,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="range" class="slider" id="question9" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question9">0</output>
+                            <input type="range" class="slider" id="question9" name="question9" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                         <td>
-                            <input type="range" class="slider" id="question10" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question10">0</output>
+                            <input type="range" class="slider" id="question10" name="question10" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                     </tr>
                     <tr>
@@ -113,12 +113,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="range" class="slider" id="question11" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question11">0</output>
+                            <input type="range" class="slider" id="question11" name="question11" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                         <td>
-                            <input type="range" class="slider" id="question12" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question12">0</output>
+                            <input type="range" class="slider" id="question12" name="question12" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                     </tr>
                     <tr>
@@ -131,12 +131,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="range" class="slider" id="question13" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question13">0</output>
+                            <input type="range" class="slider" id="question13" name="question13" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                         <td>
-                            <input type="range" class="slider" id="question14" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question14">0</output>
+                            <input type="range" class="slider" id="question14" name="question14" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                     </tr>
                     <tr>
@@ -149,12 +149,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="range" class="slider" id="question15" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question15">0</output>
+                            <input type="range" class="slider" id="question15" name="question15" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                         <td>
-                            <input type="range" class="slider" id="question16" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question16">0</output>
+                            <input type="range" class="slider" id="question16" name="question16" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                     </tr>
                     <tr>
@@ -167,12 +167,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="range" class="slider" id="question17" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question17">0</output>
+                            <input type="range" class="slider" id="question17" name="question17" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                         <td>
-                            <input type="range" class="slider" id="question18" min="0" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
-                            <output name="question18">0</output>
+                            <input type="range" class="slider" id="question18" name="question18" min="1" max="5" step="1" value="0" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output>
                         </td>
                     </tr>
 
