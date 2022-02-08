@@ -3,6 +3,7 @@
 <div class="main">
     <div class="main__container">
         <div class="main__content">
+            <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Login</h3>
             <table id="login_table">
                 <%--    action url references spring security--%>
                 <form method="POST" action="/login/loginSecurityPost">
