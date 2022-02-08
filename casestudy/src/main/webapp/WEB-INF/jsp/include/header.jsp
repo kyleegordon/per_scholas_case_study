@@ -34,6 +34,9 @@
                 <a href="/user/assessment" class="navbar__links">Assessment</a>
             </li>
             <li class="navbar__item">
+                <a href="/user/account" class="navbar__links">Account</a>
+            </li>
+            <li class="navbar__item">
                 <a href="/login/login" class="navbar__links">Login</a>
             </li>
             <li class="navbar__item">
