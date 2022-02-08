@@ -17,6 +17,7 @@ public class AccountController {
     //TODO access user data from database to populate the User Info form
     //TODO add Update functionality for user table
     //TODO add Delete functionality for user table
+    //TODO access assessment data from database and display assessment results on account page too
     @RequestMapping(value = {"/account"}, method = RequestMethod.GET)
     public ModelAndView userAccount() throws Exception {
         ModelAndView response = new ModelAndView();
