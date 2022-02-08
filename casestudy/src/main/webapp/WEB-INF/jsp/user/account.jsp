@@ -101,7 +101,7 @@
                     </tr>
                     <tr style="text-align: center;">
                         <td>
-                            <button type="submit" style="text-align: center; padding: 5px; margin-top: 10px;">Edit User Info</button>
+                            <button type="submit" style="text-align: center; padding: 5px; margin-top: 10px;">Update Account</button>
                         </td>
                         <td><button style="text-align: center; padding: 5px; margin-top: 10px;"><a href="">Delete Account</a></button></td>
                     </tr>
