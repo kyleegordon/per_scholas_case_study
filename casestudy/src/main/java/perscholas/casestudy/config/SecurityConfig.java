@@ -42,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //URL below is where the login page submits to be processed by Spring Security
                 //this should match the action url on login jsp form
                 .loginProcessingUrl("/login/loginSecurityPost")
-                .defaultSuccessUrl("/user/account")
+                .defaultSuccessUrl("/user/assessment")
                 .and()
                 .logout()
                 //removes cookie from the browser and removes user session from tomcat and spring security
