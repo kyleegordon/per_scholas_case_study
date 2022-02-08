@@ -33,6 +33,9 @@
             <li class="navbar__item">
                 <a href="/assessment" class="navbar__links">Assessment</a>
             </li>
+            <li class="navbar__item">
+                <a href="/login/login" class="navbar__links">Login</a>
+            </li>
             <li class="navbar__btn">
                 <a href="/signup" class="button">Sign Up</a>
             </li>

@@ -1,6 +1,7 @@
 package perscholas.casestudy.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -18,6 +19,10 @@ public class SignUpController {
 
     @Autowired
     private UserDAO userDao;
+
+    //this refers to the PasswordEncoder method in SecurityConfig
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @RequestMapping(value = { "/signup" }, method = RequestMethod.GET)
     public ModelAndView signup() throws Exception {
@@ -50,12 +55,19 @@ public class SignUpController {
             User user = new User();
             user.setCompanyName(form.getCompanyName());
             user.setEmail(form.getEmail());
-            user.setPassword(form.getPassword());
+
+            //this encrypts the password before sending it to the database
+            String encryptedPassword = passwordEncoder.encode(form.getPassword());
+            user.setPassword(encryptedPassword);
+
+            //TODO probably need to modify the confirm password functionality now that security login is enabled
             user.setConfirmPassword(form.getConfirmPassword());
             user.setPhone(form.getPhone());
             user.setWebsite(form.getWebsite());
             user.setNumEmployees(form.getNumEmployees());
             user.setIndustry(form.getIndustry());
+            System.out.println("Email " + user.getEmail());
+            System.out.println("Password " + user.getPassword());
             userDao.save(user);
 
             response.addObject("userEmail", user.getEmail());

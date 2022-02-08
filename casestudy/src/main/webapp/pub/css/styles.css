@@ -623,7 +623,7 @@
 }
 
 /*** Signup Page Styles ***/
-#signup_table {
+#signup_table, #login_table {
     color: #fff;
     background-color: #3838509d;
     border-radius: 4px;
@@ -631,18 +631,18 @@
     margin-right: 20px;
 }
 
-#signup_table td {
+#signup_table td, #login_table td {
     height: 40px;
     padding-left: 10px;
 }
 
-#signup_services{
+#signup_services, #login_services{
     height: 10px;
 }
 
 @media screen and (max-width: 960px) {
 
-    #signup_services {
+    #signup_services, #login_services {
         height: 600px;
 
     }
@@ -650,7 +650,7 @@
 
 @media screen and (max-width: 480px) {
 
-    #signup_services {
+    #signup_services, #login_services {
         height: 400px;
     }
 }
