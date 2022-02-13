@@ -3,7 +3,6 @@ package perscholas.casestudy.database.entity;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Set;
 
 @Getter
@@ -18,7 +17,7 @@ public class RecommendServices {
     private Integer id;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "survey_id")
+    @JoinColumn(name = "survey_id_rs")
     private Set<Results> surveyResults;
 
     @Column(name = "service_id")
