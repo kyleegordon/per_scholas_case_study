@@ -3,6 +3,8 @@ package perscholas.casestudy.database.entity;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -13,13 +15,8 @@ public class Results {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "result_id")
-    private Integer resultId;
-
-    @OneToMany(fetch = FetchType.LAZY)
     @Column(name = "survey_id")
-    @JoinColumn(name = "id")
-    private Set<Survey> survey;
+    private Integer surveyId;
 
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -28,5 +25,11 @@ public class Results {
 
     @Column(name = "answer")
     private Integer answer;
+
+    @Column(name = "date")
+    private String date;
+
+    @ManyToMany (mappedBy = "userResults")
+    private List<User> studentsEnrolled = new ArrayList<>();
 
 }
