@@ -12,6 +12,11 @@ import java.util.Set;
 @Table(name = "results")
 public class Results {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "result_id")
+    private Integer id;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "survey_id")
     private Set<Survey> survey;
