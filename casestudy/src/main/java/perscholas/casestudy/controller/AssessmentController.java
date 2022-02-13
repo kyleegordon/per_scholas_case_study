@@ -11,13 +11,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 //import perscholas.casestudy.database.dao.AssessmentDAO;
+import perscholas.casestudy.database.dao.QuestionsDAO;
 import perscholas.casestudy.database.dao.UserDAO;
 //import perscholas.casestudy.database.entity.Assessment;
+import perscholas.casestudy.database.entity.Questions;
 import perscholas.casestudy.database.entity.User;
 import perscholas.casestudy.form.AssessmentFormBean;
 import perscholas.casestudy.form.SignupFormBean;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -26,12 +29,22 @@ public class AssessmentController {
     @Autowired
     private UserDAO userDao;
 
+    @Autowired
+    private QuestionsDAO questionsDao;
+
 //    @Autowired
 //    private AssessmentDAO assessmentDao;
 
     @RequestMapping(value = { "/assessment" }, method = RequestMethod.GET)
     public ModelAndView assessment() throws Exception {
         ModelAndView response = new ModelAndView();
+
+        //get questions to be displayed on assessment form
+        List<Questions> questions= questionsDao.findAll();
+
+        for (int i = 0; i < questions.size(); i++){
+            response.addObject("question" + (i + 1), questions.get(i).getQuestion());
+        }
 
         //refers to the name of the jsp file
         response.setViewName("user/assessment");

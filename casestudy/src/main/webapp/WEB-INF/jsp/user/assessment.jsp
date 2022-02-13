@@ -15,10 +15,10 @@
 
                     <tr>
                         <td>
-                            <label for="question1">Maintain up to date hardware inventory</label>
+                            <label for="question1">${question1}</label>
                         </td>
                         <td>
-                            <label for="question2">Maintain up to date software inventory</label>
+                            <label for="question2">${question2}</label>
                         </td>
                     </tr>
                     <tr>
@@ -33,10 +33,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <label for="question3">All company devices are encrypted</label>
+                            <label for="question3">${question3}</label>
                         </td>
                         <td>
-                            <label for="question4">All company devices are managed by the organization</label>
+                            <label for="question4">${question4}</label>
                         </td>
                     </tr>
                     <tr>
@@ -51,10 +51,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <label for="question5">Every employee has a unique account</label>
+                            <label for="question5">${question5}</label>
                         </td>
                         <td>
-                            <label for="question6">Only authorized users are able to access company systems</label>
+                            <label for="question6">${question6}</label>
                         </td>
                     </tr>
                     <tr>
@@ -69,10 +69,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <label for="question7">Software is kept up to date</label>
+                            <label for="question7">${question7}</label>
                         </td>
                         <td>
-                            <label for="question8">Centralized management systems log critical events</label>
+                            <label for="question8">${question8}</label>
                         </td>
                     </tr>
                     <tr>
@@ -87,10 +87,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <label for="question9">Multi-factor authentication is enabled to access email</label>
+                            <label for="question9">${question9}</label>
                         </td>
                         <td>
-                            <label for="question10">Antivirus software is installed on all devices</label>
+                            <label for="question10">${question10}</label>
                         </td>
                     </tr>
                     <tr>
@@ -105,10 +105,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <label for="question11">Critical business data is backed up</label>
+                            <label for="question11">${question11}</label>
                         </td>
                         <td>
-                            <label for="question12">Guests WIFI is separate from company WIFI</label>
+                            <label for="question12">${question12}</label>
                         </td>
                     </tr>
                     <tr>
@@ -123,10 +123,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <label for="question13">Networking equipment is kept up to date</label>
+                            <label for="question13">${question13}</label>
                         </td>
                         <td>
-                            <label for="question14">New employees receive security awareness training</label>
+                            <label for="question14">${question14}</label>
                         </td>
                     </tr>
                     <tr>
@@ -141,10 +141,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <label for="question15">Contact list for service providers is kept up to date</label>
+                            <label for="question15">${question15}</label>
                         </td>
                         <td>
-                            <label for="question16">Appropriate licenses have been purchased for software use</label>
+                            <label for="question16">${question16}</label>
                         </td>
                     </tr>
                     <tr>
@@ -159,10 +159,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <label for="question17">Cyber security incident response has been planned in advance</label>
+                            <label for="question17">${question17}</label>
                         </td>
                         <td>
-                            <label for="question18">Organization security measures are routinely tested</label>
+                            <label for="question18">${question18}</label>
                         </td>
                     </tr>
                     <tr>
