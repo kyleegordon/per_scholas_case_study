@@ -3,27 +3,26 @@ package perscholas.casestudy.database.entity;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Set;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "results")
-public class Results {
+@Table(name = "recommend_services")
+public class RecommendServices {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "result_id")
+    @Column(name = "id")
     private Integer id;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "survey_id")
-    private Set<Survey> survey;
+    private Set<Results> surveyResults;
 
-    @Column(name = "question_id")
-    private Integer questionId;
+    @Column(name = "service_id")
+    private Integer serviceId;
 
-    @Column(name = "answer")
-    private Integer answer;
 
 }
