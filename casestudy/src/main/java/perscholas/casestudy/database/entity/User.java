@@ -15,7 +15,7 @@ public class User{
     // this annotation is what tells hibernate that this variable is an auto
     // incremented primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
+    @Column(name = "id")
     private Integer id;
 
     @Column(name = "company_name")

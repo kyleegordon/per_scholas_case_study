@@ -12,13 +12,13 @@ import javax.persistence.*;
 public class UserRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "user_roles_id")
     private Integer id;
 
     @Column(name = "user_role")
     private String userRole;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id_fk")
+    @JoinColumn(name = "user_id")
     private User user;
 }
