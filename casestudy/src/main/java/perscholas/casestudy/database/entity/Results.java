@@ -14,14 +14,17 @@ public class Results {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "result_id")
-    private Integer id;
+    private Integer resultId;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "survey_id")
+    @OneToMany(fetch = FetchType.LAZY)
+    @Column(name = "survey_id")
+    @JoinColumn(name = "id")
     private Set<Survey> survey;
 
-    @Column(name = "question_id")
-    private Integer questionId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "question_id")
+    private Questions question;
 
     @Column(name = "answer")
     private Integer answer;

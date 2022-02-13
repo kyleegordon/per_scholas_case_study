@@ -15,6 +15,6 @@ public class Services {
     @Column(name = "id")
     private Integer id;
 
-    @JoinColumn(name = "description")
+    @Column(name = "description")
     private String description;
 }

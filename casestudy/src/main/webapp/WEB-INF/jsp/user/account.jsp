@@ -24,22 +24,6 @@
                     </tr>
                     <tr>
                         <td>
-                            Password
-                        </td>
-                        <td>
-                            <input type="password" name="password" value="${userProfile.password}" required/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Confirm Password
-                        </td>
-                        <td>
-                            <input type="password" name="confirmPassword" value="${userProfile.confirmPassword}" required/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
                             Contact Phone #
                         </td>
                         <td>

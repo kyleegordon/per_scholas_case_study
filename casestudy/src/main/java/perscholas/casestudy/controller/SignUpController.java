@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import perscholas.casestudy.database.dao.UserDAO;
+import perscholas.casestudy.database.dao.UserRoleDAO;
 import perscholas.casestudy.database.entity.User;
+import perscholas.casestudy.database.entity.UserRole;
 import perscholas.casestudy.form.SignupFormBean;
 
 import javax.validation.Valid;
@@ -19,6 +21,10 @@ public class SignUpController {
 
     @Autowired
     private UserDAO userDao;
+
+    @Autowired
+    private UserRoleDAO userRoleDao;
+
 
     //this refers to the PasswordEncoder method in SecurityConfig
     @Autowired
@@ -61,7 +67,6 @@ public class SignUpController {
             user.setPassword(encryptedPassword);
 
             //TODO probably need to modify the confirm password functionality now that security login is enabled
-            user.setConfirmPassword(form.getConfirmPassword());
             user.setPhone(form.getPhone());
             user.setWebsite(form.getWebsite());
             user.setNumEmployees(form.getNumEmployees());
@@ -69,6 +74,20 @@ public class SignUpController {
             System.out.println("Email " + user.getEmail());
             System.out.println("Password " + user.getPassword());
             userDao.save(user);
+
+            //add user role
+            user = userDao.save(user);
+
+            if ( form.getId() == null ) {
+                // this is a create because the incoming id variable on the form is null
+                // so ... lets create a user role record for this user also
+                UserRole userRole = new UserRole();
+
+                userRole.setUser(user);
+                userRole.setUserRole("USER");
+
+                userRoleDao.save(userRole);
+            }
 
             response.addObject("userEmail", user.getEmail());
             response.setViewName("redirect:/user/assessment");
