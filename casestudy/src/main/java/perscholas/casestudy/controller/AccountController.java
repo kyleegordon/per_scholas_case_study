@@ -11,14 +11,18 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import perscholas.casestudy.database.dao.ResultsDAO;
 import perscholas.casestudy.database.dao.UserDAO;
 import perscholas.casestudy.database.dao.UserRoleDAO;
+import perscholas.casestudy.database.entity.Results;
 import perscholas.casestudy.database.entity.User;
 import perscholas.casestudy.database.entity.UserRole;
 import perscholas.casestudy.form.SignupFormBean;
 import perscholas.casestudy.form.UpdateFormBean;
 
 import javax.validation.Valid;
+import java.util.Collections;
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -32,9 +36,9 @@ public class AccountController {
     @Autowired
     private UserRoleDAO userRoleDao;
 
+    @Autowired
+    private ResultsDAO resultsDao;
 
-    //TODO add Update functionality for user table
-    //TODO add Delete functionality for user table
     //TODO access assessment data from database and display assessment results on account page too
     @RequestMapping(value = {"/account"}, method = RequestMethod.GET)
     public ModelAndView userAccount() throws Exception {
@@ -48,6 +52,16 @@ public class AccountController {
         //uses currentPrincipalName to find user info from the database
         User user = userDao.findByEmail(currentPrincipalName);
         response.addObject("userProfile", user);
+
+
+        List<Results> results = resultsDao.getUserResults(user.getId());
+        Integer securityScore = 0;
+        System.out.println(results);
+        for (int i = 0; i < results.size(); i++){
+            System.out.println("Result " + i + ": " + results.get(i).getAnswer());
+            securityScore += results.get(i).getAnswer();
+            response.addObject("result" + (i+1), results.get(i).getAnswer());
+        }
 
 
         return response;

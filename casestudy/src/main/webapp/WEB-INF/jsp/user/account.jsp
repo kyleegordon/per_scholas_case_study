@@ -100,7 +100,7 @@
                             Question 1:
                         </td>
                         <td>
-                            Result
+                            ${result1}
                         </td>
                     </tr>
                     <tr>
