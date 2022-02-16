@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import perscholas.casestudy.database.dao.UserDAO;
+import perscholas.casestudy.database.dao.UserRoleDAO;
 import perscholas.casestudy.database.entity.User;
+import perscholas.casestudy.database.entity.UserRole;
 import perscholas.casestudy.form.SignupFormBean;
 import perscholas.casestudy.form.UpdateFormBean;
 
@@ -26,6 +28,9 @@ public class AccountController {
 
     @Autowired
     private UserDAO userDao;
+
+    @Autowired
+    private UserRoleDAO userRoleDao;
 
 
     //TODO add Update functionality for user table
@@ -82,12 +87,30 @@ public class AccountController {
             user.setIndustry(form.getIndustry());
             userDao.save(user);
 
-            //add user role
             user = userDao.save(user);
 
         }
         return response;
     }
 
+    @RequestMapping(value = "/deleteAccount", method = RequestMethod.GET)
+    public ModelAndView deleteAccount() throws Exception {
+        ModelAndView response = new ModelAndView();
+        response.setViewName("/index");
+
+        //this gets username from spring security
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
+
+        //uses currentPrincipalName to find user info from the database
+        User user = userDao.findByEmail(currentPrincipalName);
+        UserRole userRole = userRoleDao.findByUserId(user.getId());
+
+        userRoleDao.delete(userRole);
+
+        userDao.delete(user);
+
+        return response;
+    }
 
 }

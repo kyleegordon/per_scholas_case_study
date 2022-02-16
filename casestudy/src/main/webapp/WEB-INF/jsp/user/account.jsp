@@ -86,10 +86,10 @@
                     <tr style="text-align: center;">
                         <td>
                             <button type="submit" style="text-align: center; padding: 5px; margin-top: 10px;">Update Account</button>
+                            </form>
                         </td>
-                        <td><button style="text-align: center; padding: 5px; margin-top: 10px;"><a href="">Delete Account</a></button></td>
+                        <td><button type="button" style="text-align: center; padding: 5px; margin-top: 10px;"><a href="/user/deleteAccount">Delete Account</a></button></td>
                     </tr>
-                </form>
             </table>
         </div>
         <div class="main__img--container">
