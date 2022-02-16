@@ -53,15 +53,19 @@ public class AccountController {
         User user = userDao.findByEmail(currentPrincipalName);
         response.addObject("userProfile", user);
 
-
+        //TODO decide how I want to display survey results and finish implementing it
         List<Results> results = resultsDao.getUserResults(user.getId());
         Integer securityScore = 0;
         System.out.println(results);
         for (int i = 0; i < results.size(); i++){
             System.out.println("Result " + i + ": " + results.get(i).getAnswer());
-            securityScore += results.get(i).getAnswer();
+            securityScore += (Integer) results.get(i).getAnswer();
             response.addObject("result" + (i+1), results.get(i).getAnswer());
         }
+
+        securityScore = (securityScore*100)/90;
+        System.out.println("Secutiry Score: " + securityScore);
+        response.addObject("securityScore", securityScore);
 
 
         return response;
