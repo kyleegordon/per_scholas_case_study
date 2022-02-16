@@ -3,6 +3,7 @@ package perscholas.casestudy.database.entity;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -27,7 +28,7 @@ public class Results {
     private Integer answer;
 
     @Column(name = "date")
-    private String date;
+    private LocalDateTime date;
 
     @Column(name = "user_id")
     private Integer userId;

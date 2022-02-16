@@ -5,7 +5,7 @@
         <div class="main__content">
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">User Info</h3>
             <table id="account_table">
-                <form name="accountForm" method="POST" action="/accountSubmit">
+                <form name="accountForm" method="POST" action="/user/accountSubmit">
                     <tr>
                         <td>
                             Company Name
