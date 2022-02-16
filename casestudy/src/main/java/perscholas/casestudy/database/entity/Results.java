@@ -15,13 +15,13 @@ public class Results {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "survey_id")
-    private Integer surveyId;
+    @Column(name = "id")
+    private Integer id;
 
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "question_id")
-    private Questions question;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "question_id")
+    @Column(name = "question_id")
+    private Integer questionId;
 
     @Column(name = "answer")
     private Integer answer;
@@ -29,7 +29,10 @@ public class Results {
     @Column(name = "date")
     private String date;
 
-    @ManyToMany (mappedBy = "userResults")
-    private List<User> studentsEnrolled = new ArrayList<>();
+    @Column(name = "user_id")
+    private Integer userId;
+
+//    @ManyToMany (mappedBy = "userResults")
+//    private List<User> userResults = new ArrayList<>();
 
 }

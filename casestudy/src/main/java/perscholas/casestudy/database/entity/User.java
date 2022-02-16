@@ -57,12 +57,12 @@ public class User{
     @Column(name = "other_data")
     private boolean otherData;
 
-    @ManyToMany
-    @JoinTable(
-            name = "user_results",
-            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id", unique = false)},
-            inverseJoinColumns = {@JoinColumn(name ="survey_id", referencedColumnName = "survey_id", unique = false)}
-    )
-    private List<Results> userResults = new ArrayList<Results>();
+//    @ManyToMany
+//    @JoinTable(
+//            name = "user_results",
+//            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id", unique = false)},
+//            inverseJoinColumns = {@JoinColumn(name ="survey_id", referencedColumnName = "survey_id", unique = false)}
+//    )
+//    private List<Results> userResults = new ArrayList<Results>();
 
 }

@@ -2,19 +2,21 @@ package perscholas.casestudy.database.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import javax.persistence.*;
 
+import javax.persistence.*;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "questions")
-public class Questions {
+@Table(name = "services")
+public class Services {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
-    @JoinColumn(name = "question")
-    private String question;
+    @Column(name = "service_description")
+    private Integer serviceDescription;
+
+
 }

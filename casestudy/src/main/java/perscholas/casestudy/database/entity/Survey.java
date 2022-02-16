@@ -8,17 +8,18 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "user_roles")
-public class UserRole {
+@Table(name = "survey")
+public class Survey {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "user_role")
-    private String userRole;
+    @Column(name = "question")
+    private String question;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @Column(name = "service_id")
+    private Integer serviceId;
+
+
 }

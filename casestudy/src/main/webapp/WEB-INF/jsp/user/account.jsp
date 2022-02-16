@@ -19,7 +19,7 @@
                             Contact Email
                         </td>
                         <td>
-                            <input type="email" name="email" value="${userProfile.email}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" required/>
+                            <input type="email" name="email" value="${userProfile.email}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" readonly/>
                         </td>
                     </tr>
                     <tr>
@@ -93,7 +93,78 @@
             </table>
         </div>
         <div class="main__img--container">
-            <img src="../../../pub/images/undraw_hacker_mind_-6-y85.svg" alt="surveillance image" id="main__img">
+            <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Assessment Results</h3>
+            <table id="results_table">
+                    <tr>
+                        <td>
+                            Question 1:
+                        </td>
+                        <td>
+                            Result
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>
+                            <button type="button" style="text-align: center; padding: 5px; margin-top: 10px;">View Recommended Services</button>
+                        </td>
+                    </tr>
+            </table>
         </div>
     </div>
 </div>
