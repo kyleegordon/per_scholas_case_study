@@ -11,7 +11,6 @@ import java.util.List;
 
 public interface ResultsDAO extends JpaRepository<Results, Long> {
 
-//    @Query("select r from Results r where r.userId = :userId")
-//    List<Results> getUserResults(@Param("userId") Integer userId);
+
 }
 

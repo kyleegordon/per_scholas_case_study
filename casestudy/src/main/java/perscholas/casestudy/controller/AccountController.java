@@ -37,8 +37,6 @@ public class AccountController {
     @Autowired
     private UserRoleDAO userRoleDao;
 
-//    @Autowired
-//    private ResultsDAO resultsDao;
 
 
     //TODO access assessment data from database and display assessment results on account page too
