@@ -5,10 +5,7 @@
         <div class="main__content" style="margin: 0 auto;">
             <table id="assessment_table">
                 <caption>
-                    <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Security Assessment</h3>
-                    Please use the sliding scale to assess your current security practices:<br>
-                    1 = We don't do this <br>
-                    5 = The process is automated
+                    <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Recommended Services</h3>
                 </caption>
                 <form name="servicesForm" method="POST" action="/user/servicesSubmit">
 

@@ -35,4 +35,14 @@ public class ServicesController {
 
         return response;
     }
+
+    @RequestMapping(value = { "/servicesSubmit" }, method = RequestMethod.POST)
+    public ModelAndView servicesSubmit() throws Exception {
+        ModelAndView response = new ModelAndView();
+
+
+        response.setViewName("/user/account");
+
+        return response;
+    }
 }
