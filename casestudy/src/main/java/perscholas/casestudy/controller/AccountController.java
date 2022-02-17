@@ -11,19 +11,15 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import perscholas.casestudy.database.dao.ResultsDAO;
 import perscholas.casestudy.database.dao.UserDAO;
 import perscholas.casestudy.database.dao.UserRoleDAO;
 import perscholas.casestudy.database.entity.Results;
 import perscholas.casestudy.database.entity.User;
 import perscholas.casestudy.database.entity.UserRole;
-import perscholas.casestudy.form.SignupFormBean;
 import perscholas.casestudy.form.UpdateFormBean;
-
 import javax.validation.Valid;
-import java.util.Collections;
 import java.util.List;
-import java.util.Set;
+
 
 @Controller
 @RequestMapping("/user")
@@ -83,7 +79,6 @@ public class AccountController {
         }
 
         securityScore = (securityScore*100)/90;
-        System.out.println("Secutiry Score: " + securityScore);
         response.addObject("securityScore", securityScore);
 
 

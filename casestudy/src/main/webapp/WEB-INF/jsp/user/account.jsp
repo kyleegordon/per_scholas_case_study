@@ -177,10 +177,10 @@
                     </tr>
                     <tr style="text-align: center;">
                         <td>
-                            <button type="button" style="text-align: center; padding: 5px; margin-top: 10px;">View Recommended Services</button>
+                            <button type="button" style="text-align: center; padding: 5px; margin-top: 10px;"><a href="/user/services">View Recommended Services</a></button>
                         </td>
                         <td>
-                            <button type="button" style="text-align: center; padding: 5px; margin-top: 10px;">Retake Assessment</button>
+                            <button type="button" style="text-align: center; padding: 5px; margin-top: 10px;"><a href="/user/assessment">Retake Assessment</a></button>
                         </td>
                     </tr>
             </table>
