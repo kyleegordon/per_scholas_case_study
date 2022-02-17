@@ -97,71 +97,90 @@
             <table id="results_table">
                     <tr>
                         <td>
-                            Question 1:
+                            Question 1: ${result1}
                         </td>
                         <td>
-                            ${result1}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Question 2:
-                        </td>
-                        <td>
-                            ${result2}
+                            Question 10: ${result10}
                         </td>
                     </tr>
                     <tr>
                         <td>
-
+                            Question 2: ${result2}
                         </td>
                         <td>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-
-                        </td>
-                        <td>
-
+                            Question 11: ${result11}
                         </td>
                     </tr>
                     <tr>
                         <td>
-
+                            Question 3: ${result3}
                         </td>
                         <td>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-
-                        </td>
-                        <td>
-
+                            Question 12: ${result12}
                         </td>
                     </tr>
                     <tr>
                         <td>
-
+                            Question 4: ${result4}
                         </td>
                         <td>
-
+                            Question 13: ${result13}
                         </td>
                     </tr>
                     <tr>
                         <td>
-
+                            Question 5: ${result5}
                         </td>
                         <td>
-
+                            Question 14: ${result14}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Question 6: ${result6}
+                        </td>
+                        <td>
+                            Question 15: ${result15}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Question 7: ${result7}
+                        </td>
+                        <td>
+                            Question 16: ${result16}
+                        </td>
+                    </tr>
+                <tr>
+                    <td>
+                        Question 8: ${result8}
+                    </td>
+                    <td>
+                        Question 17: ${result17}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Question 9: ${result9}
+                    </td>
+                    <td>
+                        Question 18: ${result18}
+                    </td>
+                </tr>
+                    <tr>
+                        <td>
+                            Overall Score:
+                        </td>
+                        <td>
+                            ${securityScore}
                         </td>
                     </tr>
                     <tr style="text-align: center;">
                         <td>
                             <button type="button" style="text-align: center; padding: 5px; margin-top: 10px;">View Recommended Services</button>
+                        </td>
+                        <td>
+                            <button type="button" style="text-align: center; padding: 5px; margin-top: 10px;">Retake Assessment</button>
                         </td>
                     </tr>
             </table>
