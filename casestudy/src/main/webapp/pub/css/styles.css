@@ -623,7 +623,7 @@
 }
 
 /*** Signup Page Styles ***/
-#signup_table, #login_table, #account_table {
+#signup_table, #login_table, #account_table, #results_table {
     color: #fff;
     background-color: #3838509d;
     border-radius: 4px;
@@ -631,7 +631,7 @@
     margin-right: 20px;
 }
 
-#signup_table td, #login_table td, #account_table td {
+#signup_table td, #login_table td, #account_table td, #results_table td {
     height: 40px;
     padding-left: 10px;
 }
