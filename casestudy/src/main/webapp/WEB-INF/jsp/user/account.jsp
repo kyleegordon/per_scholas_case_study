@@ -105,10 +105,10 @@
                     </tr>
                     <tr>
                         <td>
-
+                            Question 2:
                         </td>
                         <td>
-
+                            ${result2}
                         </td>
                     </tr>
                     <tr>

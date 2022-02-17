@@ -56,11 +56,12 @@ public class AccountController {
         //TODO decide how I want to display survey results and finish implementing it
         List<Results> results = user.getResults();
         Integer securityScore = 0;
-        System.out.println(results);
-        for (int i = 0; i < results.size(); i++){
-            System.out.println("Result " + i + ": " + results.get(i).getAnswer());
+        int questionNum = 18;
+        for (int i = (results.size() - 1); i >= (results.size() - 18); i--){
+            System.out.println("Result " + questionNum + ": " + results.get(i).getAnswer());
             securityScore += (Integer) results.get(i).getAnswer();
-            response.addObject("result" + (i+1), results.get(i).getAnswer());
+            response.addObject("result" + questionNum, results.get(i).getAnswer());
+            questionNum--;
         }
 
         securityScore = (securityScore*100)/90;
