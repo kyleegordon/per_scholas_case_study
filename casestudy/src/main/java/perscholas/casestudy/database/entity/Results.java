@@ -33,6 +33,10 @@ public class Results {
     @Column(name = "user_id")
     private Integer userId;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "question_id", nullable = false)
+    private Survey survey;
+
 //    @ManyToMany (mappedBy = "userResults")
 //    private List<User> userResults = new ArrayList<>();
 

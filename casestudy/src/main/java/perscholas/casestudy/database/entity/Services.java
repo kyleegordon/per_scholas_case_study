@@ -18,8 +18,7 @@ public class Services {
     @Column(name = "service_description")
     private Integer serviceDescription;
 
-    @OneToMany(mappedBy = "service", fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "service", fetch = FetchType.LAZY)
     private Set<Survey> surveys;
 
 

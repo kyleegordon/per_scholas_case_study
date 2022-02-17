@@ -3,6 +3,7 @@ package perscholas.casestudy.database.entity;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Getter
@@ -24,6 +25,9 @@ public class Survey {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "service_id", nullable = false)
     private Services service;
+
+    @OneToMany(mappedBy = "survey", fetch = FetchType.LAZY)
+    private Set<Results> results;
 
 
 }
