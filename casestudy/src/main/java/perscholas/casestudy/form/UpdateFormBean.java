@@ -19,23 +19,23 @@ public class UpdateFormBean {
 
     private Integer id;
 
-    @NotEmpty
+    @NotEmpty(message = "Company Name is required")
     private String companyName;
 
     @NotEmpty
     private String email;
 
 
-    @NotEmpty
+    @NotEmpty(message = "Phone is required")
     private String phone;
 
-    @NotEmpty
+    @NotEmpty(message = "Website is required")
     private String website;
 
-    @NotNull
+    @NotNull(message = "Number of Employees is required")
     private Integer numEmployees;
 
-    @NotEmpty
+    @NotEmpty(message = "Industry is required")
     private String industry;
 
 
