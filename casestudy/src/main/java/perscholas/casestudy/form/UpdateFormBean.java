@@ -5,8 +5,6 @@ import lombok.Setter;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import perscholas.casestudy.database.entity.User;
-import perscholas.casestudy.validation.TwoFieldsAreEqual;
-
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
