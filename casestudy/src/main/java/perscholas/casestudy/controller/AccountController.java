@@ -78,9 +78,22 @@ public class AccountController {
             questionNum--;
         }
 
+        String securityGrade;
         securityScore = (securityScore*100)/90;
-        response.addObject("securityScore", securityScore);
+        if(securityScore < 60){
+            securityGrade = "F";
+        } else if(securityScore < 70){
+            securityGrade = "D";
+        } else if(securityScore < 80){
+            securityGrade = "C";
+        } else if(securityScore < 90){
+            securityGrade = "B";
+        } else{
+            securityGrade = "A";
+        }
 
+        response.addObject("securityScore", securityScore);
+        response.addObject("securityGrade", securityGrade);
 
         return response;
     }

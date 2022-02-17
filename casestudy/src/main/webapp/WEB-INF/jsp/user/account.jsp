@@ -172,7 +172,7 @@
                             Overall Score:
                         </td>
                         <td>
-                            ${securityScore}
+                            ${securityScore}% ${securityGrade}
                         </td>
                     </tr>
                     <tr style="text-align: center;">
