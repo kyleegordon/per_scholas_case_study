@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 
 @Getter
@@ -56,6 +57,12 @@ public class User{
 
     @Column(name = "other_data")
     private boolean otherData;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private Set<Results> results;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private Set<UserRole> userRoles;
 
 //    @ManyToMany
 //    @JoinTable(

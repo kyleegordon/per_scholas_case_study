@@ -37,6 +37,12 @@ public class Results {
     @JoinColumn(name = "question_id", nullable = false)
     private Survey survey;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+
+
 //    @ManyToMany (mappedBy = "userResults")
 //    private List<User> userResults = new ArrayList<>();
 
