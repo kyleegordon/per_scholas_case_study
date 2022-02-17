@@ -59,7 +59,7 @@ public class User{
     private boolean otherData;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private Set<Results> results;
+    private List<Results> results;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private Set<UserRole> userRoles;

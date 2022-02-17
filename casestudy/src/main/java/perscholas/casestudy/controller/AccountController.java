@@ -23,6 +23,7 @@ import perscholas.casestudy.form.UpdateFormBean;
 import javax.validation.Valid;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/user")
@@ -36,8 +37,9 @@ public class AccountController {
     @Autowired
     private UserRoleDAO userRoleDao;
 
-    @Autowired
-    private ResultsDAO resultsDao;
+//    @Autowired
+//    private ResultsDAO resultsDao;
+
 
     //TODO access assessment data from database and display assessment results on account page too
     @RequestMapping(value = {"/account"}, method = RequestMethod.GET)
@@ -54,7 +56,7 @@ public class AccountController {
         response.addObject("userProfile", user);
 
         //TODO decide how I want to display survey results and finish implementing it
-        List<Results> results = resultsDao.getUserResults(user.getId());
+        List<Results> results = user.getResults();
         Integer securityScore = 0;
         System.out.println(results);
         for (int i = 0; i < results.size(); i++){

@@ -19,8 +19,8 @@ public class Survey {
     @Column(name = "question")
     private String question;
 
-    @Column(name = "service_id")
-    private Integer serviceId;
+//    @Column(name = "service_id")
+//    private Integer serviceId;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "service_id", nullable = false)
