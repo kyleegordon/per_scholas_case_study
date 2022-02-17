@@ -84,11 +84,14 @@
                         </td>
                     </tr>
                     <tr style="text-align: center;">
-                        <td>
+                        <td colspan="2">
                             <button type="submit" style="text-align: center; padding: 5px; margin-top: 10px;">Update Account</button>
                             </form>
+
+                            <button type="button" style="text-align: center; padding: 5px; margin-top: 10px;"><a href="/user/updatePassword">Change Password</a></button>
+
+                            <button type="button" style="text-align: center; padding: 5px; margin-top: 10px;"><a href="/user/deleteAccount">Delete Account</a></button>
                         </td>
-                        <td><button type="button" style="text-align: center; padding: 5px; margin-top: 10px;"><a href="/user/deleteAccount">Delete Account</a></button></td>
                     </tr>
             </table>
         </div>
