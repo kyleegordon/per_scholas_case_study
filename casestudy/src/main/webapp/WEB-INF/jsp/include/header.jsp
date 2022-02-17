@@ -31,12 +31,6 @@
             <li class="navbar__item">
                 <a href="/about" class="navbar__links">About</a>
             </li>
-            <%--        only displays assessment button if user is logged in--%>
-            <sec:authorize access="isAuthenticated()">
-                <li class="navbar__item">
-                    <a href="/user/assessment" class="navbar__links">Assessment</a>
-                </li>
-            </sec:authorize>
             <%--        only displays login link if not currently logged in to an account--%>
             <sec:authorize access="!isAuthenticated()">
                 <li class="navbar__item">
