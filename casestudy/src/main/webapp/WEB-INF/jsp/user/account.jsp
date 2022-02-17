@@ -94,77 +94,77 @@
         </div>
         <div class="main__img--container">
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Assessment Results</h3>
-            <table id="results_table">
+            <table id="results_table" style="text-align: left;">
                     <tr>
                         <td>
-                            Question 1: ${result1}
+                            Hardware Inventory: ${result1}
                         </td>
                         <td>
-                            Question 10: ${result10}
+                            Software Inventory: ${result2}
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Question 2: ${result2}
+                            Device Encryption: ${result3}
                         </td>
                         <td>
-                            Question 11: ${result11}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Question 3: ${result3}
-                        </td>
-                        <td>
-                            Question 12: ${result12}
+                            Device Management: ${result4}
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Question 4: ${result4}
+                            Employee Accounts: ${result5}
                         </td>
                         <td>
-                            Question 13: ${result13}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Question 5: ${result5}
-                        </td>
-                        <td>
-                            Question 14: ${result14}
+                            Account Management: ${result6}
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Question 6: ${result6}
+                            Software Updates: ${result7}
                         </td>
                         <td>
-                            Question 15: ${result15}
+                            Critical Event Logging: ${result8}
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Question 7: ${result7}
+                            Multi-factor Authentication: ${result9}
                         </td>
                         <td>
-                            Question 16: ${result16}
+                            Anti-virus: ${result10}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Data Backups: ${result11}
+                        </td>
+                        <td>
+                            WIFI: ${result12}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Network Equipment: ${result13}
+                        </td>
+                        <td>
+                            Security Awareness: ${result14}
                         </td>
                     </tr>
                 <tr>
                     <td>
-                        Question 8: ${result8}
+                        Service Providers: ${result15}
                     </td>
                     <td>
-                        Question 17: ${result17}
+                        Software Licensing: ${result16}
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Question 9: ${result9}
+                       Response Planning: ${result17}
                     </td>
                     <td>
-                        Question 18: ${result18}
+                        Testing: ${result18}
                     </td>
                 </tr>
                     <tr>

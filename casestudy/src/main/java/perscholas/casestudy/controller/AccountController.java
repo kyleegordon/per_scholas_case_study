@@ -58,9 +58,27 @@ public class AccountController {
         Integer securityScore = 0;
         int questionNum = 18;
         for (int i = (results.size() - 1); i >= (results.size() - 18); i--){
-            System.out.println("Result " + questionNum + ": " + results.get(i).getAnswer());
-            securityScore += (Integer) results.get(i).getAnswer();
-            response.addObject("result" + questionNum, results.get(i).getAnswer());
+           Integer currentResult = results.get(i).getAnswer();
+            String resultGrade;
+
+           switch(results.get(i).getAnswer()){
+               case 5:
+                   resultGrade = "A";
+                   break;
+               case 4:
+                   resultGrade = "B";
+                   break;
+               case 3:
+                   resultGrade = "C";
+                   break;
+               case 2:
+                   resultGrade = "D";
+                   break;
+               default:
+                   resultGrade = "F";
+           }
+            securityScore += currentResult;
+            response.addObject("result" + questionNum, resultGrade);
             questionNum--;
         }
 
