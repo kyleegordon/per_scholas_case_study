@@ -92,7 +92,7 @@
                     </tr>
             </table>
         </div>
-        <div class="main__img--container">
+        <div class="main__content">
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Assessment Results</h3>
             <table id="results_table" style="text-align: left;">
                     <tr>
