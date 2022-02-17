@@ -2,8 +2,8 @@ package perscholas.casestudy.database.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -17,6 +17,10 @@ public class Services {
 
     @Column(name = "service_description")
     private Integer serviceDescription;
+
+    @OneToMany(mappedBy = "service", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private Set<Survey> surveys;
 
 
 }

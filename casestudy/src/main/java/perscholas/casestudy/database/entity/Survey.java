@@ -21,5 +21,9 @@ public class Survey {
     @Column(name = "service_id")
     private Integer serviceId;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "service_id", nullable = false)
+    private Services service;
+
 
 }
