@@ -110,8 +110,6 @@ public class AccountController {
         //uses currentPrincipalName to find user info from the database
         User user = userDao.findByEmail(currentPrincipalName);
         response.addObject("userProfile", user);
-        System.out.println("username: " + user.getEmail());
-        System.out.println("password: " + user.getPassword());
 
         //Update
         if (errors.hasErrors()) {
