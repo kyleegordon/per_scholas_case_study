@@ -4,7 +4,7 @@
 <div class="main">
     <div class="main__container" id="assessment_container" style="grid-template-columns: 1fr; justify-content: center;">
         <div class="main__content" style="margin: 0 auto;">
-            <table id="assessment_table">
+            <table id="services_table">
                 <caption>
                     <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Recommended Services</h3>
                 </caption>

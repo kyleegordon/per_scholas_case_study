@@ -72,7 +72,7 @@ public class ServicesController {
         ModelAndView response = new ModelAndView();
 
 
-        response.setViewName("/user/account");
+        response.setViewName("redirect:/user/account");
 
         return response;
     }
