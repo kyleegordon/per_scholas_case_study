@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -64,12 +65,14 @@ public class User{
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private Set<UserRole> userRoles;
 
-//    @ManyToMany
-//    @JoinTable(
-//            name = "user_results",
-//            joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id", unique = false)},
-//            inverseJoinColumns = {@JoinColumn(name ="survey_id", referencedColumnName = "survey_id", unique = false)}
-//    )
-//    private List<Results> userResults = new ArrayList<Results>();
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_services",
+            joinColumns = {
+                    @JoinColumn(name = "user_id", referencedColumnName = "id",
+                            nullable = false, updatable = false)},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "service_id", referencedColumnName = "id",
+                            nullable = false, updatable = false)})
+    private Set<Services> services = new HashSet<>();
 
 }
