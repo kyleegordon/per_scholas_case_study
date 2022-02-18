@@ -25,7 +25,7 @@ public class LoginController {
     @RequestMapping(value = {  "/logoutSuccess" }, method = RequestMethod.GET)
     public ModelAndView logoutSuccess() throws Exception {
         ModelAndView response = new ModelAndView();
-        response.setViewName("redirect:/index");
+        response.setViewName("redirect:/login/login");
         return response;
     }
 

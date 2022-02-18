@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../include/header.jsp" />
 
 <div class="main">
@@ -9,14 +10,12 @@
                 </caption>
                 <form name="servicesForm" method="POST" action="/user/servicesSubmit">
 
-                    <tr>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                    </tr>
+                    <c:forEach items = "${servicesList}" var="service">
+                        <tr>
+                            <td>${service.id}</td>
+                            <td>${service.serviceDescription}</td>
+                        </tr>
+                    </c:forEach>
 
                     <tr style="text-align: center;">
                         <td colspan="2">

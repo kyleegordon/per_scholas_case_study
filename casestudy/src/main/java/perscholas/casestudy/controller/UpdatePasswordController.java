@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -58,8 +59,6 @@ public class UpdatePasswordController {
         User user = userDao.findByEmail(currentPrincipalName);
         response.addObject("userProfile", user);
 
-        System.out.println("Current Password: " + user.getPassword());
-        System.out.println("Current Form Password: " + form.getCurrentPassword());
 
         //Update
         if (errors.hasErrors()) {
@@ -72,13 +71,8 @@ public class UpdatePasswordController {
             response.setViewName("user/account");
         } else {
             //there are no errors, update user
-            String encryptedPassword = passwordEncoder.encode(form.getCurrentPassword());
-            System.out.println("Encrypted Form Password: " + encryptedPassword);
-
-            if(user.getPassword().equals(encryptedPassword)){
-                System.out.println("New Form Password: " + form.getNewPassword());
+            if(passwordEncoder.matches(form.getCurrentPassword(), user.getPassword())){
                 String encryptedNewPassword = passwordEncoder.encode(form.getNewPassword());
-                System.out.println("New Encrypted Form Password: " + encryptedNewPassword);
                 user.setPassword(encryptedNewPassword);
                 userDao.save(user);
                 response.setViewName("redirect:/login/logout");

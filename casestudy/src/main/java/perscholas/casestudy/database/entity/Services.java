@@ -16,7 +16,7 @@ public class Services {
     private Integer id;
 
     @Column(name = "service_description")
-    private Integer serviceDescription;
+    private String serviceDescription;
 
     @OneToMany(mappedBy = "service", fetch = FetchType.LAZY)
     private Set<Survey> surveys;
