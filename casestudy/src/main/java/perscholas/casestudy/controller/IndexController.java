@@ -17,4 +17,14 @@ public class IndexController {
 
         return response;
     }
+
+    @RequestMapping(value = { "/about" }, method = RequestMethod.GET)
+    public ModelAndView about() throws Exception {
+        ModelAndView response = new ModelAndView();
+
+        //refers to the name of the jsp file
+        response.setViewName("about");
+
+        return response;
+    }
 }

@@ -14,12 +14,9 @@ import perscholas.casestudy.database.dao.UserDAO;
 import perscholas.casestudy.database.dao.UserRoleDAO;
 import perscholas.casestudy.database.entity.Results;
 import perscholas.casestudy.database.entity.Services;
-import perscholas.casestudy.database.entity.Survey;
 import perscholas.casestudy.database.entity.User;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequestMapping("/user")
