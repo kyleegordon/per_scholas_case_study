@@ -4,7 +4,7 @@
     <div class="main__container">
         <div class="main__content">
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Change Password</h3>
-            <table id="password_table">
+            <table id="password_table" class="form_table">
                 <%--    action url references spring security--%>
                 <form method="POST" action="/user/updatePasswordSubmit">
                     <tr>

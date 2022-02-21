@@ -13,7 +13,7 @@
     <div class="main__container">
         <div class="main__content">
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Create an Account</h3>
-            <table id="signup_table">
+            <table id="signup_table" class="form_table">
                 <form name="signupForm" method="POST" action="/signupSubmit">
                     <tr>
                         <td>

@@ -3,7 +3,7 @@
 <div class="main">
     <div class="main__container" id="assessment_container" style="grid-template-columns: 1fr; justify-content: center;">
         <div class="main__content" style="margin: 0 auto;">
-            <table id="assessment_table">
+            <table id="assessment_table" class="form_table">
                 <caption>
                     <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Security Assessment</h3>
                     Please use the sliding scale to assess your current security practices:<br>

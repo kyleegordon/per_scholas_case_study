@@ -5,7 +5,7 @@
     <div class="main__container">
         <div class="main__content">
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Recommended Services</h3>
-            <table id="services_table">
+            <table id="services_table" class="form_table">
                 <form name="servicesForm" method="POST" action="/user/servicesSubmit">
 
                     <c:forEach items = "${servicesList}" var="service">

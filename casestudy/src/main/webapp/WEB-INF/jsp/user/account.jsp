@@ -5,7 +5,7 @@
     <div class="main__container">
         <div class="main__content">
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">User Info</h3>
-            <table id="account_table">
+            <table id="account_table" class="form_table">
                 <form name="accountForm" method="POST" action="/user/accountSubmit">
                     <tr>
                         <td>
@@ -70,7 +70,7 @@
         </div>
         <div class="main__content">
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Assessment Results</h3>
-            <table id="results_table" style="text-align: left;">
+            <table id="results_table" style="text-align: left;" class="form_table">
                     <tr>
                         <td>
                             Hardware Inventory: ${result1}
@@ -166,7 +166,7 @@
 
 <div class="services">
     <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Enrolled Services</h3>
-    <table id="enrolled_services_table">
+    <table id="enrolled_services_table" class="form_table">
         <form name="servicesForm" method="GET" action="/user/unenrollServicesSubmit">
 
             <c:forEach items = "${servicesSet}" var="service">
