@@ -51,8 +51,6 @@ public class SignupFormBean {
     private String industry;
 
 
-
-
     private boolean personalData;
 
 

@@ -17,8 +17,13 @@ import perscholas.casestudy.database.entity.Results;
 import perscholas.casestudy.database.entity.Services;
 import perscholas.casestudy.database.entity.Survey;
 import perscholas.casestudy.database.entity.User;
+import perscholas.casestudy.form.ServiceEnrollFormBean;
+import perscholas.casestudy.form.SignupFormBean;
+
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/user")
@@ -52,22 +57,23 @@ public class ServicesController {
 
         List<Results> results = user.getResults();
         List<Services> services = new ArrayList<>();
+        Set<Services> enrolledServices = user.getServices();
         Integer questionNum = 18;
+
+        // add service to list to be displayed on jsp page if score < 3,
+        // the service is not already on the list, and the user is not already enrolled in service
         for (int i = (results.size() - 1); i >= (results.size() - 18); i--){
             Integer currentResult = results.get(i).getAnswer();
             if (currentResult < 3){
                 Survey survey = surveyDao.findById(results.get(i).getQuestionId());
                 Services service = survey.getService();
-                if (!services.contains(service))
+                if (!services.contains(service) && !enrolledServices.contains(service))
                 {
                     services.add(service);
                 }
             }
             questionNum--;
         }
-        System.out.println("Credit: " + user.isCreditData());
-        System.out.println("Personal: " + user.isPersonalData());
-        System.out.println("Credit: " + user.isHealthcareData());
 
         //adds service for credit data
         if (!services.contains(servicesDao.findById(5))){
@@ -91,16 +97,56 @@ public class ServicesController {
         }
 
         response.addObject("servicesList", services);
-
         response.setViewName("/user/services");
 
         return response;
     }
 
     @RequestMapping(value = { "/servicesSubmit" }, method = RequestMethod.POST)
-    public ModelAndView servicesSubmit() throws Exception {
+    public ModelAndView servicesSubmit(@Valid ServiceEnrollFormBean form) throws Exception {
         ModelAndView response = new ModelAndView();
 
+        //this gets username from spring security
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
+
+        //uses currentPrincipalName to find user info from the database
+        User user = userDao.findByEmail(currentPrincipalName);
+        response.addObject("userProfile", user);
+
+        Set<Services> enrollServices = user.getServices();
+
+        if(form.isDeviceManagement() && !enrollServices.contains(servicesDao.findById(1))){
+            enrollServices.add(servicesDao.findById(1));
+        }
+
+        if(form.isIdentityManagement() && !enrollServices.contains(servicesDao.findById(2))){
+            enrollServices.add(servicesDao.findById(2));
+        }
+
+        if(form.isNetworkManagement() && !enrollServices.contains(servicesDao.findById(3))){
+            enrollServices.add(servicesDao.findById(3));
+        }
+
+        if(form.isProactiveServices() && !enrollServices.contains(servicesDao.findById(4))){
+            enrollServices.add(servicesDao.findById(4));
+        }
+
+        if(form.isPci() && !enrollServices.contains(servicesDao.findById(5))){
+            enrollServices.add(servicesDao.findById(5));
+        }
+
+        if(form.isHiipa() && !enrollServices.contains(servicesDao.findById(6))){
+            enrollServices.add(servicesDao.findById(6));
+        }
+
+        if(form.isPii() && !enrollServices.contains(servicesDao.findById(7))){
+            enrollServices.add(servicesDao.findById(7));
+        }
+
+        user.setServices(enrollServices);
+
+        userDao.save(user);
 
         response.setViewName("redirect:/user/account");
 

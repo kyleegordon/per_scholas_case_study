@@ -22,9 +22,12 @@ public class Services {
     @Column(name = "service_description")
     private String serviceDescription;
 
+    @Column(name = "variable")
+    private String variable;
+
     @OneToMany(mappedBy = "service", fetch = FetchType.LAZY)
     private Set<Survey> surveys;
 
     @ManyToMany(mappedBy = "services", fetch = FetchType.LAZY)
-    private Set<User> students = new HashSet<>();
+    private Set<User> users = new HashSet<>();
 }

@@ -2,17 +2,15 @@
 <jsp:include page="../include/header.jsp" />
 
 <div class="main">
-    <div class="main__container" id="assessment_container" style="grid-template-columns: 1fr; justify-content: center;">
-        <div class="main__content" style="margin: 0 auto;">
+    <div class="main__container">
+        <div class="main__content">
+            <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Recommended Services</h3>
             <table id="services_table">
-                <caption>
-                    <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Recommended Services</h3>
-                </caption>
                 <form name="servicesForm" method="POST" action="/user/servicesSubmit">
 
                     <c:forEach items = "${servicesList}" var="service">
                         <tr>
-                            <td>${service.id}</td>
+                            <td><input type="checkbox" name="${service.variable}"></td>
                             <td>${service.serviceName}:</td>
                             <td>${service.serviceDescription}</td>
                         </tr>
@@ -26,15 +24,15 @@
                 </form>
             </table>
         </div>
-        <!-- <div class="main__img--container">
-            <img src="images/undraw_hacker_mind_-6-y85.svg" alt="cyber professional image" id="main__img">
-        </div> -->
+        <div class="main__img--container">
+            <img src="../../../pub/images/undraw_real_time_sync_re_nky7.svg" alt="multiple devices image" id="main__img">
+        </div>
     </div>
 </div>
 
-<div class="services" id="assessment_services"></div>
-
+<div class="services" id="login_services"></div>
 
 <jsp:include page="../include/footer.jsp" />
+
 </body>
 </html>
