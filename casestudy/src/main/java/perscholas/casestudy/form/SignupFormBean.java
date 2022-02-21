@@ -51,7 +51,6 @@ public class SignupFormBean {
     private String industry;
 
 
-    private boolean securityProfessionals;
 
 
     private boolean personalData;
@@ -62,7 +61,6 @@ public class SignupFormBean {
 
     private boolean creditData;
 
-    private boolean otherData;
 
     private List<String> errorMessages = new ArrayList<>();
 

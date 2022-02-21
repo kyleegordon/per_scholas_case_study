@@ -66,21 +66,20 @@ public class SignUpController {
             String encryptedPassword = passwordEncoder.encode(form.getPassword());
             user.setPassword(encryptedPassword);
 
-            //TODO probably need to modify the confirm password functionality now that security login is enabled
             user.setPhone(form.getPhone());
             user.setWebsite(form.getWebsite());
             user.setNumEmployees(form.getNumEmployees());
             user.setIndustry(form.getIndustry());
-            System.out.println("Email " + user.getEmail());
-            System.out.println("Password " + user.getPassword());
+            user.setPersonalData(form.isPersonalData());
+            user.setHealthcareData(form.isHealthcareData());
+            user.setCreditData(form.isCreditData());
+
             userDao.save(user);
 
             //add user role
             user = userDao.save(user);
 
             if ( form.getId() == null ) {
-                // this is a create because the incoming id variable on the form is null
-                // so ... lets create a user role record for this user also
                 UserRole userRole = new UserRole();
 
                 userRole.setUser(user);

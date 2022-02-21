@@ -37,19 +37,6 @@ public class UpdateFormBean {
     private String industry;
 
 
-    private boolean securityProfessionals;
-
-
-    private boolean personalData;
-
-
-    private boolean healthcareData;
-
-
-    private boolean creditData;
-
-    private boolean otherData;
-
     private List<String> errorMessages = new ArrayList<>();
 
     private List<User> userList = new ArrayList<>();

@@ -44,9 +44,6 @@ public class User{
     @Column(name = "industry")
     private String industry;
 
-    @Column(name = "security_professionals")
-    private boolean securityProfessionals;
-
     @Column(name = "personal_data")
     private boolean personalData;
 
@@ -55,9 +52,6 @@ public class User{
 
     @Column(name = "credit_data")
     private boolean creditData;
-
-    @Column(name = "other_data")
-    private boolean otherData;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Results> results;

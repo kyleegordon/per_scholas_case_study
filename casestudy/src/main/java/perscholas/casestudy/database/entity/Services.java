@@ -16,6 +16,9 @@ public class Services {
     @Column(name = "id")
     private Integer id;
 
+    @Column(name="service_name")
+    private String serviceName;
+
     @Column(name = "service_description")
     private String serviceDescription;
 

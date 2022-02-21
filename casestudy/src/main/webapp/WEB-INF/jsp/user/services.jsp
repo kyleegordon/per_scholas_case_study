@@ -13,6 +13,7 @@
                     <c:forEach items = "${servicesList}" var="service">
                         <tr>
                             <td>${service.id}</td>
+                            <td>${service.serviceName}:</td>
                             <td>${service.serviceDescription}</td>
                         </tr>
                     </c:forEach>

@@ -1,4 +1,5 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <jsp:include page="include/header.jsp" />
 
 <div class="main">
@@ -78,33 +79,20 @@
                             <input type="text" name="industry" value="${formBeanKey.industry}" />
                         </td>
                     </tr>
+
                     <tr>
                         <td>
-                            <label for="securityProfessionals">Do you employ security professionals</label>
+                            Data Types Managed
                         </td>
                         <td>
-                            <input type="radio" id="yes" name="securityProfessionals" value="yes">
-                            <label for="yes">Yes</label>
-                            <input type="radio" id="no" name="securityProfessionals" value="no" checked>
-                            <label for="no">No</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="data_types">Data Types Managed</label>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="data1" name="data_types" value="Personal">
-                            <label for="data1">Personal</label>
+                            <input type="checkbox" id="personal_data" name="personalData">
+                            <label for="personal_data">Personal</label>
                             <br>
-                            <input type="checkbox" id="data2" name="data_types" value="Healthcare">
-                            <label for="data2">Healthcare</label>
+                            <input type="checkbox" id="healthcare_data" name="healthcareData" >
+                            <label for="healthcare_data">Healthcare</label>
                             <br>
-                            <input type="checkbox" id="data3" name="data_types" value="Credit">
-                            <label for="data3">Credit Card</label>
-                            <br>
-                            <input type="checkbox" id="data4" name="data_types" value="Other">
-                            <label for="data4">Other</label>
+                            <input type="checkbox" id="credit_data" name="creditData" >
+                            <label for="credit_data">Credit Card</label>
                         </td>
                     </tr>
                     <tr style="text-align: center;">
