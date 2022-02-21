@@ -60,7 +60,7 @@
                             Website URL
                         </td>
                         <td>
-                            <input type="text" name="website" value="${formBeanKey.website}" />
+                            <input type="text" name="website" value="${formBeanKey.website}" required/>
                         </td>
                     </tr>
                     <tr>
@@ -68,7 +68,7 @@
                             Number of Employees
                         </td>
                         <td>
-                            <input type="number" name="numEmployees" value="${formBeanKey.numEmployees}" min="1"/>
+                            <input type="number" name="numEmployees" value="${formBeanKey.numEmployees}" min="1" required/>
                         </td>
                     </tr>
                     <tr>
@@ -76,7 +76,7 @@
                             Industry
                         </td>
                         <td>
-                            <input type="text" name="industry" value="${formBeanKey.industry}" />
+                            <input type="text" name="industry" value="${formBeanKey.industry}" required/>
                         </td>
                     </tr>
 

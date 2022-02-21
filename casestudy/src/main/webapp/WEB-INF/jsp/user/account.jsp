@@ -2,6 +2,12 @@
 <jsp:include page="../include/header.jsp" />
 
 <div class="main">
+    <div style="color: red;">
+        <!--    prints errors on page-->
+        <c:forEach var = "message" items = "${formBeanKey.errorMessages}" >
+        <p><c:out value = "${message}"/><p>
+        </c:forEach>
+    </div>
     <div class="main__container">
         <div class="main__content">
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">User Info</h3>
@@ -36,7 +42,7 @@
                             Website URL
                         </td>
                         <td>
-                            <input type="text" name="website" value="${userProfile.website}" />
+                            <input type="text" name="website" value="${userProfile.website}" required/>
                         </td>
                     </tr>
                     <tr>
@@ -44,7 +50,7 @@
                             Number of Employees
                         </td>
                         <td>
-                            <input type="number" name="numEmployees" value="${userProfile.numEmployees}" min="1"/>
+                            <input type="number" name="numEmployees" value="${userProfile.numEmployees}" min="1" required/>
                         </td>
                     </tr>
                     <tr>
@@ -52,7 +58,7 @@
                             Industry
                         </td>
                         <td>
-                            <input type="text" name="industry" value="${userProfile.industry}" />
+                            <input type="text" name="industry" value="${userProfile.industry}" required />
                         </td>
                     </tr>
 
