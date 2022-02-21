@@ -14,11 +14,13 @@ import org.springframework.web.servlet.ModelAndView;
 import perscholas.casestudy.database.dao.UserDAO;
 import perscholas.casestudy.database.dao.UserRoleDAO;
 import perscholas.casestudy.database.entity.Results;
+import perscholas.casestudy.database.entity.Services;
 import perscholas.casestudy.database.entity.User;
 import perscholas.casestudy.database.entity.UserRole;
 import perscholas.casestudy.form.UpdateFormBean;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Set;
 
 
 @Controller
@@ -94,6 +96,9 @@ public class AccountController {
 
         response.addObject("securityScore", securityScore);
         response.addObject("securityGrade", securityGrade);
+
+        Set<Services> servicesSet = user.getServices();
+        response.addObject("servicesSet", servicesSet);
 
         return response;
     }

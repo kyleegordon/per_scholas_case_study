@@ -152,4 +152,54 @@ public class ServicesController {
 
         return response;
     }
+
+    @RequestMapping(value = { "/unenrollServicesSubmit" }, method = RequestMethod.GET)
+    public ModelAndView unenrollServicesSubmit(@Valid ServiceEnrollFormBean form) throws Exception {
+        ModelAndView response = new ModelAndView();
+
+        //this gets username from spring security
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
+
+        //uses currentPrincipalName to find user info from the database
+        User user = userDao.findByEmail(currentPrincipalName);
+        response.addObject("userProfile", user);
+
+        Set<Services> services = user.getServices();
+
+        if(form.isDeviceManagement() && services.contains(servicesDao.findById(1))){
+            services.remove(servicesDao.findById(1));
+        }
+
+        if(form.isIdentityManagement() && services.contains(servicesDao.findById(2))){
+            services.remove(servicesDao.findById(2));
+        }
+
+        if(form.isNetworkManagement() && services.contains(servicesDao.findById(3))){
+            services.remove(servicesDao.findById(3));
+        }
+
+        if(form.isProactiveServices() && services.contains(servicesDao.findById(4))){
+            services.remove(servicesDao.findById(4));
+        }
+
+        if(form.isPci() && services.contains(servicesDao.findById(5))){
+            services.remove(servicesDao.findById(5));
+        }
+
+        if(form.isHiipa() && services.contains(servicesDao.findById(6))){
+            services.remove(servicesDao.findById(6));
+        }
+
+        if(form.isPii() && services.contains(servicesDao.findById(7))){
+            services.remove(servicesDao.findById(7));
+        }
+
+        user.setServices(services);
+
+        userDao.save(user);
+        response.setViewName("redirect:/user/account");
+
+        return response;
+    }
 }

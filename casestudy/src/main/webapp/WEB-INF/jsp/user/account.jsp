@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../include/header.jsp" />
 
 <div class="main">
@@ -163,7 +164,27 @@
     </div>
 </div>
 
-<div class="services"></div>
+<div class="services">
+    <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Enrolled Services</h3>
+    <table id="enrolled_services_table">
+        <form name="servicesForm" method="GET" action="/user/unenrollServicesSubmit">
+
+            <c:forEach items = "${servicesSet}" var="service">
+                <tr>
+                    <td><input type="checkbox" name="${service.variable}"></td>
+                    <td>${service.serviceName}:</td>
+                    <td>${service.serviceDescription}</td>
+                </tr>
+            </c:forEach>
+
+            <tr style="text-align: center;">
+                <td colspan="2">
+                    <button type="submit" style="text-align: center; padding: 5px;">Unenroll</button>
+                </td>
+            </tr>
+        </form>
+    </table>
+</div>
 
 <jsp:include page="../include/footer.jsp" />
 
