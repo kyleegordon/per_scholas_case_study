@@ -11,6 +11,8 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import perscholas.casestudy.database.dao.ResultsDAO;
+import perscholas.casestudy.database.dao.ServicesDAO;
 import perscholas.casestudy.database.dao.UserDAO;
 import perscholas.casestudy.database.dao.UserRoleDAO;
 import perscholas.casestudy.database.entity.Results;
@@ -19,6 +21,7 @@ import perscholas.casestudy.database.entity.User;
 import perscholas.casestudy.database.entity.UserRole;
 import perscholas.casestudy.form.UpdateFormBean;
 import javax.validation.Valid;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -35,7 +38,11 @@ public class AccountController {
     @Autowired
     private UserRoleDAO userRoleDao;
 
+    @Autowired
+    private ResultsDAO resultsDAO;
 
+    @Autowired
+    private ServicesDAO servicesDAO;
 
     //TODO access assessment data from database and display assessment results on account page too
     @RequestMapping(value = {"/account"}, method = RequestMethod.GET)
@@ -154,7 +161,21 @@ public class AccountController {
         User user = userDao.findByEmail(currentPrincipalName);
         UserRole userRole = userRoleDao.findByUserId(user.getId());
 
-        userRoleDao.delete(userRole);
+        List<Results> results = resultsDAO.findAllByUserId(user.getId());
+
+        if (results.size() > 0) {
+            resultsDAO.deleteAll(results);
+        }
+
+        if (user.getServices().size() > 0) {
+            Set<Services> emptyServiceSet = new HashSet<>();
+            user.setServices(emptyServiceSet);
+            userDao.save(user);
+        }
+
+        if (userRole != null) {
+            userRoleDao.delete(userRole);
+        }
 
         userDao.delete(user);
 

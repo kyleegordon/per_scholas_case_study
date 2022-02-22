@@ -201,7 +201,6 @@
 
     if (tableRows.length == 0)
     {
-        alert("if statement success")
         myDiv[0].style.display = 'none';
     }
 
