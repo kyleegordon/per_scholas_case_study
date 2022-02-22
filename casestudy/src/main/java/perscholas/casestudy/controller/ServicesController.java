@@ -18,7 +18,6 @@ import perscholas.casestudy.database.entity.Services;
 import perscholas.casestudy.database.entity.Survey;
 import perscholas.casestudy.database.entity.User;
 import perscholas.casestudy.form.ServiceEnrollFormBean;
-import perscholas.casestudy.form.SignupFormBean;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
