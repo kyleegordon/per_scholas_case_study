@@ -76,77 +76,77 @@
         </div>
         <div class="main__content">
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Assessment Results</h3>
-            <table id="results_table" style="text-align: left;" class="form_table">
+            <table id="results_table" style="text-align: left; font-size: 1.2rem;" class="form_table">
                     <tr>
                         <td>
-                            Hardware Inventory: ${result1}
+                            Hardware Inventory: <span class="change-color"><b>${result1}</b></span>
                         </td>
                         <td>
-                            Software Inventory: ${result2}
+                            Software Inventory: <span class="change-color"><b>${result2}</b></span>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Device Encryption: ${result3}
+                            Device Encryption: <span class="change-color"><b>${result3}</b></span>
                         </td>
                         <td>
-                            Device Management: ${result4}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Employee Accounts: ${result5}
-                        </td>
-                        <td>
-                            Account Management: ${result6}
+                            Device Management: <span class="change-color"><b>${result4}</b></span>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Software Updates: ${result7}
+                            Employee Accounts: <span class="change-color"><b>${result5}</b></span>
                         </td>
                         <td>
-                            Critical Event Logging: ${result8}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Multi-factor Authentication: ${result9}
-                        </td>
-                        <td>
-                            Anti-virus: ${result10}
+                            Account Management: <span class="change-color"><b>${result6}</b></span>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Data Backups: ${result11}
+                            Software Updates: <span class="change-color"><b>${result7}</b></span>
                         </td>
                         <td>
-                            WIFI: ${result12}
+                            Critical Event Logging: <span class="change-color"><b>${result8}</b></span>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Network Equipment: ${result13}
+                            Multi-factor Authentication: <span class="change-color"><b>${result9}</b></span>
                         </td>
                         <td>
-                            Security Awareness: ${result14}
+                            Anti-virus: <span class="change-color"><b>${result10}</b></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Data Backups: <span class="change-color"><b>${result11}</b></span>
+                        </td>
+                        <td>
+                            WIFI: <span class="change-color"><b>${result12}</b></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Network Equipment: <span class="change-color"><b>${result13}</b></span>
+                        </td>
+                        <td>
+                            Security Awareness: <span class="change-color"><b>${result14}</b></span>
                         </td>
                     </tr>
                 <tr>
                     <td>
-                        Service Providers: ${result15}
+                        Service Providers: <span class="change-color"><b>${result15}</b></span>
                     </td>
                     <td>
-                        Software Licensing: ${result16}
+                        Software Licensing: <span class="change-color"><b>${result16}</b></span>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                       Response Planning: ${result17}
+                       Response Planning: <span class="change-color"><b>${result17}</b></span>
                     </td>
                     <td>
-                        Testing: ${result18}
+                        Testing: <span class="change-color"><b>${result18}</b></span>
                     </td>
                 </tr>
                     <tr>
@@ -154,7 +154,7 @@
                             Overall Score:
                         </td>
                         <td>
-                            ${securityScore}% ${securityGrade}
+                            ${securityScore}% <span class="change-color"><b>${securityGrade}</b></span>
                         </td>
                     </tr>
                     <tr style="text-align: center;">
@@ -195,6 +195,26 @@
 </div>
 
 <jsp:include page="../include/footer.jsp" />
+<script>
 
+    var elements = document.getElementsByClassName('change-color');
+
+    for (var i in elements) {
+        if (elements[i].textContent == 'A') {
+            elements[i].className = "colorA"
+        } else if (elements[i].textContent == 'B') {
+            elements[i].className = "colorB";
+        } else if (elements[i].textContent == 'C') {
+            elements[i].className = "colorC";
+        } else if (elements[i].textContent == 'D') {
+            elements[i].className = "colorD";
+        } else {
+            elements[i].className = "colorF";
+        }
+    }
+
+
+
+</script>
 </body>
 </html>

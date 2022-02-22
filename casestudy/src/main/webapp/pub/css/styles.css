@@ -665,3 +665,27 @@ button a:visited {
     color: black;
     text-decoration: none;
 }
+
+#results_table td {
+    padding: 2%;
+}
+
+.colorA {
+    color: green;
+}
+
+.colorB {
+    color: #0d7ceb;
+}
+
+.colorC {
+    color: yellow;
+}
+
+.colorD {
+    color: orange;
+}
+
+.colorF {
+    color: red;
+}
