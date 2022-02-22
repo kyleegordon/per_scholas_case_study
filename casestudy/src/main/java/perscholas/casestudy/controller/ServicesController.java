@@ -75,21 +75,21 @@ public class ServicesController {
         }
 
         //adds service for credit data
-        if (!services.contains(servicesDao.findById(5))){
+        if (!services.contains(servicesDao.findById(5)) && !enrolledServices.contains(servicesDao.findById(5))){
             if (user.isCreditData()){
                 services.add(servicesDao.findById(5));
             }
         }
 
         //adds service for healthcare data
-        if (!services.contains(servicesDao.findById(6))){
+        if (!services.contains(servicesDao.findById(6)) && !enrolledServices.contains(servicesDao.findById(6))){
             if (user.isHealthcareData()){
                 services.add(servicesDao.findById(6));
             }
         }
 
         //adds service for personal data
-        if (!services.contains(servicesDao.findById(7))){
+        if (!services.contains(servicesDao.findById(7)) && !enrolledServices.contains(servicesDao.findById(7))){
             if (user.isPersonalData()){
                 services.add(servicesDao.findById(7));
             }
