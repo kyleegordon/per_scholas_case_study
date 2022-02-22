@@ -690,3 +690,8 @@ button a:visited {
 .colorF {
     color: red;
 }
+
+#services_table td {
+    padding: 2%;
+
+}

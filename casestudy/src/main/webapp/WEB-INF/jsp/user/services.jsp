@@ -11,13 +11,13 @@
                     <c:forEach items = "${servicesList}" var="service">
                         <tr>
                             <td><input type="checkbox" name="${service.variable}"></td>
-                            <td>${service.serviceName}:</td>
+                            <td><b>${service.serviceName}</b></td>
                             <td>${service.serviceDescription}</td>
                         </tr>
                     </c:forEach>
 
                     <tr style="text-align: center;">
-                        <td colspan="2">
+                        <td colspan="3">
                             <button type="submit" style="text-align: center; padding: 5px;">Enroll</button>
                         </td>
                     </tr>
