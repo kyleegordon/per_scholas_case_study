@@ -171,13 +171,13 @@
 </div>
 
 <div class="services">
-    <div style="margin:0 10% 0 10%;">
+    <div style="margin:0 10% 0 10%;" class="enrolled_services_div">
         <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Enrolled Services</h3>
         <table id="enrolled_services_table" class="form_table">
             <form name="servicesForm" method="GET" action="/user/unenrollServicesSubmit">
 
                 <c:forEach items="${servicesSet}" var="service">
-                    <tr>
+                    <tr class="enrolled_row">
                         <td><input type="checkbox" name="${service.variable}"></td>
                         <td>${service.serviceName}:</td>
                         <td>${service.serviceDescription}</td>
@@ -196,6 +196,14 @@
 
 <jsp:include page="../include/footer.jsp" />
 <script>
+    var myDiv =  document.getElementsByClassName('enrolled_services_div')
+    var tableRows = document.getElementsByClassName('enrolled_row');
+
+    if (tableRows.length == 0)
+    {
+        alert("if statement success")
+        myDiv[0].style.display = 'none';
+    }
 
     var elements = document.getElementsByClassName('change-color');
 
