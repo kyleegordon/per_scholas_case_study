@@ -4,7 +4,7 @@
     <div class="main__container">
         <div class="main__content">
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">About</h3>
-            <p style="text-align: justify;">
+            <p class="form_table" style="font-size: 1.5rem; font-weight: normal; line-height: 1.8rem;">
                 Cyber security threats are constantly evolving, as a small business owner
                 you don't have time to keep up with the trends. Let NAMEHERE Security use
                 our expertise to protect your company so you can focus on what matter most,

@@ -11,7 +11,7 @@
     <div class="main__container">
         <div class="main__content">
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">User Info</h3>
-            <table id="account_table" class="form_table">
+            <table id="account_table" class="form_table" style="font-size: 1.2rem;">
                 <form name="accountForm" method="POST" action="/user/accountSubmit">
                     <tr>
                         <td>
