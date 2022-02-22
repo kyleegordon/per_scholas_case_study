@@ -170,8 +170,8 @@
     </div>
 </div>
 
-<div class="services">
-    <div style="margin:0 10% 0 10%;" class="enrolled_services_div">
+<div class="services" id="account_services">
+    <div style="margin:0 10% 0 10%;" class="enrolled_services_div services__container">
         <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">Enrolled Services</h3>
         <table id="enrolled_services_table" class="form_table">
             <form name="servicesForm" method="GET" action="/user/unenrollServicesSubmit">

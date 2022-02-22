@@ -637,13 +637,14 @@
     padding-left: 10px;
 }
 
-#signup_services, #login_services{
+#signup_services, #login_services {
     height: 10px;
 }
 
+
 @media screen and (max-width: 960px) {
 
-    #signup_services, #login_services {
+    #signup_services, #login_services{
         height: 600px;
 
     }
@@ -651,7 +652,7 @@
 
 @media screen and (max-width: 480px) {
 
-    #signup_services, #login_services {
+    #signup_services, #login_services{
         height: 400px;
     }
 }
