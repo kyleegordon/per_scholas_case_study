@@ -691,7 +691,8 @@ button a:visited {
     color: red;
 }
 
-#services_table td {
+#services_table td, #enrolled_services_table td {
+    font-size: 1.2rem;
     padding: 2%;
 
 }
