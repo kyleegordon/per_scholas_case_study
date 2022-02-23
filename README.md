@@ -6,13 +6,13 @@
 
 
 
-## User Stories By Page:
+## User Stories By Page
 
-..* Index
-....* As a user, I would like to view the index page so that I can access and navigate this application.
- 
-..* About
-....* As a user, I would like to view the about page so that I can learn more about this application.
+..* Index ..
+....* As a user, I would like to view the index page so that I can access and navigate this application. ..
+  
+..* About ..
+....* As a user, I would like to view the about page so that I can learn more about this application. ..
 ..* Sign Up
     -As a user, I would like to create an account so that I can use this application.
 ..* Login
