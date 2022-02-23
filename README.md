@@ -2,7 +2,7 @@
 
 ## Description
 
-..This application allows users to enroll in services offered by a cyber security company. Users will be able to create an account that captures information about their organization and industry. They will then fill out an assessment with questions based on the 18 CIS Critical Security Controls. This data will used to create a report that assigns them an overall security score and highlights areas that need improvement. It will use this information to recommend services that align with the areas that need improvement. 
+This application allows users to enroll in services offered by a cyber security company. Users will be able to create an account that captures information about their organization and industry. They will then fill out an assessment with questions based on the 18 CIS Critical Security Controls. This data will used to create a report that assigns them an overall security score and highlights areas that need improvement. It will use this information to recommend services that align with the areas that need improvement. 
 
 
 
