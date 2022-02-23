@@ -14,23 +14,23 @@ import perscholas.casestudy.database.entity.User;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @DataJpaTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-@AutoConfigureTestDatabase
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class UserDAOTest {
 
     @Autowired
     private UserDAO userDao;
 
+    static Integer testId;
+
     @Test
     @Order(1)
     @Rollback(value = false)
     public void saveUserTest() {
-//
-//        Recipe recipe = new Recipe();
-//        Set<Recipe> recipes = new HashSet<Recipe>();
-//        recipes.add(recipe);
+
         User user1 = new User();
         user1.setCompanyName("Test Company");
         user1.setEmail("unitTest@email.com");
@@ -45,15 +45,18 @@ public class UserDAOTest {
 
         userDao.save(user1);
 
-        //Assertions.assertThat(user1.getId()).isGreaterThan(0);
-        Assertions.assertThat(userDao.findById(user1.getId()).getId()).isEqualTo(1);
+        testId = user1.getId();
+        System.out.println("User TEST ID" + testId);
+
+        Assertions.assertThat(userDao.findById(user1.getId()).getId()).isGreaterThan(0);
     }
 
     @Test
     @Order(2)
     public void getUserTest() {
-        User user = userDao.findById(1);
-        Assertions.assertThat(user.getId()).isEqualTo(1);
+        System.out.println("TEST ID:" + testId);
+        User user = userDao.findById(testId);
+        Assertions.assertThat(user.getId()).isEqualTo(testId);
     }
 
     @Test
@@ -67,23 +70,19 @@ public class UserDAOTest {
     @Order(4)
     @Rollback(value = false)
     public void updateUserTest() {
-        User user = userDao.findById(1);
+        User user = userDao.findById(testId);
         user.setCompanyName("Unit Test Update");
-        Assertions.assertThat(userDao.findById(1).getCompanyName()).isEqualTo(user.getCompanyName());
+        Assertions.assertThat(userDao.findById(testId).getCompanyName()).isEqualTo(user.getCompanyName());
     }
 
     @Test
     @Order(5)
     @Rollback(value = false)
     public void deleteUserTest() {
-        User user = userDao.findById(1);
+        User user = userDao.findById(testId);
         userDao.delete(user);
-        Optional<User> optionalUser = Optional.ofNullable(userDao.findByEmail(user.getEmail()));
+        User tempUser = userDao.findById(testId);
 
-        User tempUser = null;
-        if (optionalUser.isPresent()) {
-            tempUser = optionalUser.get();
-        }
 
         Assertions.assertThat(tempUser).isNull();
     }
