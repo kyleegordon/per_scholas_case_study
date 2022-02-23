@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -16,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 import perscholas.casestudy.database.dao.UserDAO;
 import perscholas.casestudy.database.dao.UserRoleDAO;
 import perscholas.casestudy.database.entity.User;
-import perscholas.casestudy.form.UpdateFormBean;
 import perscholas.casestudy.form.UpdatePasswordFormBean;
 
 import javax.validation.Valid;
@@ -70,7 +68,7 @@ public class UpdatePasswordController {
             response.addObject("formBeanKey", form);
             response.setViewName("user/account");
         } else {
-            //there are no errors, update user
+            //there are no errors, update password
             if(passwordEncoder.matches(form.getCurrentPassword(), user.getPassword())){
                 String encryptedNewPassword = passwordEncoder.encode(form.getNewPassword());
                 user.setPassword(encryptedNewPassword);

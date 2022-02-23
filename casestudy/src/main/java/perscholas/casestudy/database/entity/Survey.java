@@ -5,7 +5,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.Set;
 
-
 @Getter
 @Setter
 @Entity
@@ -18,9 +17,6 @@ public class Survey {
 
     @Column(name = "question")
     private String question;
-
-//    @Column(name = "service_id")
-//    private Integer serviceId;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "service_id", nullable = false)

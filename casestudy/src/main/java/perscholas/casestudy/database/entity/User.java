@@ -3,12 +3,9 @@ package perscholas.casestudy.database.entity;
 import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 
 @Getter
 @Setter
@@ -17,8 +14,6 @@ import java.util.Set;
 public class User{
 
     @Id
-    // this annotation is what tells hibernate that this variable is an auto
-    // incremented primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;

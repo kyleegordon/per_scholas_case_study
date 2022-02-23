@@ -1,7 +1,5 @@
 package perscholas.casestudy.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -12,13 +10,11 @@ import org.springframework.web.servlet.ModelAndView;
 import perscholas.casestudy.database.dao.ServicesDAO;
 import perscholas.casestudy.database.dao.SurveyDAO;
 import perscholas.casestudy.database.dao.UserDAO;
-import perscholas.casestudy.database.dao.UserRoleDAO;
 import perscholas.casestudy.database.entity.Results;
 import perscholas.casestudy.database.entity.Services;
 import perscholas.casestudy.database.entity.Survey;
 import perscholas.casestudy.database.entity.User;
 import perscholas.casestudy.form.ServiceEnrollFormBean;
-
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,13 +24,8 @@ import java.util.Set;
 @RequestMapping("/user")
 public class ServicesController {
 
-    public static final Logger LOG = LoggerFactory.getLogger(LoginController.class);
-
     @Autowired
     private UserDAO userDao;
-
-    @Autowired
-    private UserRoleDAO userRoleDao;
 
     @Autowired
     private ServicesDAO servicesDao;
@@ -115,6 +106,7 @@ public class ServicesController {
 
         Set<Services> enrollServices = user.getServices();
 
+        //enrolls user in selected services
         if(form.isDeviceManagement() && !enrollServices.contains(servicesDao.findById(1))){
             enrollServices.add(servicesDao.findById(1));
         }
@@ -166,6 +158,7 @@ public class ServicesController {
 
         Set<Services> services = user.getServices();
 
+        //un-enrolls user from selected services
         if(form.isDeviceManagement() && services.contains(servicesDao.findById(1))){
             services.remove(servicesDao.findById(1));
         }

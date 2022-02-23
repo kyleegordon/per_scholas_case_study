@@ -1,7 +1,5 @@
 package perscholas.casestudy.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -30,8 +28,6 @@ import java.util.Set;
 @RequestMapping("/user")
 public class AccountController {
 
-    public static final Logger LOG = LoggerFactory.getLogger(LoginController.class);
-
     @Autowired
     private UserDAO userDao;
 
@@ -41,10 +37,6 @@ public class AccountController {
     @Autowired
     private ResultsDAO resultsDAO;
 
-    @Autowired
-    private ServicesDAO servicesDAO;
-
-    //TODO access assessment data from database and display assessment results on account page too
     @RequestMapping(value = {"/account"}, method = RequestMethod.GET)
     public ModelAndView userAccount() throws Exception {
         ModelAndView response = new ModelAndView();
@@ -58,7 +50,6 @@ public class AccountController {
         User user = userDao.findByEmail(currentPrincipalName);
         response.addObject("userProfile", user);
 
-        //TODO decide how I want to display survey results and finish implementing it
         List<Results> results = user.getResults();
         Integer securityScore = 0;
         int questionNum = 18;

@@ -6,7 +6,6 @@ import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import perscholas.casestudy.database.entity.User;
 import perscholas.casestudy.validation.TwoFieldsAreEqual;
-
 import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;

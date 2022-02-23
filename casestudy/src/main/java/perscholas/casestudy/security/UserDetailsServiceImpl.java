@@ -9,15 +9,12 @@ import org.springframework.stereotype.Component;
 import perscholas.casestudy.database.dao.UserDAO;
 import perscholas.casestudy.database.entity.User;
 import perscholas.casestudy.database.entity.UserRole;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 @Component
 public class UserDetailsServiceImpl implements UserDetailsService, org.springframework.security.core.userdetails.UserDetailsService {
-
-
 
     @Autowired
     private UserDAO userDao;

@@ -13,7 +13,6 @@ import perscholas.casestudy.database.dao.UserRoleDAO;
 import perscholas.casestudy.database.entity.User;
 import perscholas.casestudy.database.entity.UserRole;
 import perscholas.casestudy.form.SignupFormBean;
-
 import javax.validation.Valid;
 
 @Controller
@@ -25,8 +24,6 @@ public class SignUpController {
     @Autowired
     private UserRoleDAO userRoleDao;
 
-
-    //this refers to the PasswordEncoder method in SecurityConfig
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -34,7 +31,6 @@ public class SignUpController {
     public ModelAndView signup() throws Exception {
         ModelAndView response = new ModelAndView();
 
-        //refers to the name of the jsp file
         response.setViewName("signup");
 
         return response;
