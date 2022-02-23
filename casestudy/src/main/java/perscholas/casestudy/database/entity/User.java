@@ -1,6 +1,8 @@
 package perscholas.casestudy.database.entity;
 
 import javax.persistence.*;
+
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import java.util.HashSet;
