@@ -196,6 +196,7 @@
 
 <jsp:include page="../include/footer.jsp" />
 <script>
+    /* This hides the enrolled_services_div if the user is not enrolled in any services */
     var myDiv =  document.getElementsByClassName('enrolled_services_div')
     var tableRows = document.getElementsByClassName('enrolled_row');
 
@@ -204,8 +205,8 @@
         myDiv[0].style.display = 'none';
     }
 
+    /* This changes the color of the assessment grades based on value */
     var elements = document.getElementsByClassName('change-color');
-
     for (var i in elements) {
         if (elements[i].textContent == 'A') {
             elements[i].className = "colorA"
@@ -219,8 +220,6 @@
             elements[i].className = "colorF";
         }
     }
-
-
 
 </script>
 </body>
