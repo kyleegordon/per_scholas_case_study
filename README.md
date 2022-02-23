@@ -2,7 +2,7 @@
 
 ## Description
 
-This application allows users to enroll in services offered by a cyber security company. Users will be able to create an account that captures information about their organization and industry. They will then fill out an assessment with questions based on the 18 CIS Critical Security Controls. This data will used to create a report that assigns them an overall security score and highlights areas that need improvement. It will use this information to recommend services that align with the areas that need improvement. 
+This application allows users to enroll in services offered by a cyber security company. Users will be able to create an account that captures information about their organization and industry. They will then fill out an assessment with questions based on the 18 CIS Critical Security Controls. This data will used to create a report that assigns them an overall security score and highlights areas that need improvement. It will use this information to recommend services that align with the areas that need improvement. The users will then have the option to enroll or unenroll in any of the recommended services. 
 
 
 
@@ -33,5 +33,7 @@ Services
 *As a user, I would like to enroll in services so that I can benefit from them.
     
     
-  ## Technical Challenges
+## Technical Challenges
+
+I initially had difficulty planning the structure of the database. Originally, I had one table for the assessment results that included a column for each question. This didn't offer flexibility or scalability should the number of assessment questions need to change in the future. It also made it difficult to create a relationship between the assessment question and the related service. To fix this, I restructured my database so that each question was represented by a row instead of a column. 
   
