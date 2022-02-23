@@ -103,7 +103,7 @@ public class AccountController {
     @RequestMapping(value = {"/accountSubmit"}, method = RequestMethod.POST)
     public ModelAndView updateAccount(@Valid UpdateFormBean form, BindingResult errors) throws Exception {
         ModelAndView response = new ModelAndView();
-        response.setViewName("user/account");
+        response.setViewName("redirect:/user/account");
 
         //this gets username from spring security
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
