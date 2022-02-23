@@ -2,7 +2,7 @@
     <div class="social__media">
         <div class="social__media--wrap">
             <div class="footer__logo">
-                <a href="/" id="footer__logo"><i class="fas fa-dice-d20"></i>NameHere</a>
+                <a href="/" id="footer__logo"><i class="fas fa-dice-d20"></i>Cyber Security Co.</a>
             </div>
             <div class="social__icons">
                 <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -12,7 +12,7 @@
                 <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
-        <p class="website__rights">© NameHere 2022. All rights reserved </p>
+        <p class="website__rights"> &copy; Cyber Security Co. 2022. All rights reserved </p>
     </div>
 </div>
 <script src="../../../pub/js/app.js"></script>

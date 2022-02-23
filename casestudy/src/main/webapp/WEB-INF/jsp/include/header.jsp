@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAMEHERE</title>
+    <title>Cyber Security Co.</title>
     <link rel="stylesheet" href="../../../pub/css/styles.css">
     <!-- adds font Ubuntu -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,7 @@
 <body>
 <nav class="navbar">
     <div class="navbar__container">
-        <a href="/index" id="navbar__logo"><i class="fas fa-dice-d20"></i>NameHere</a>
+        <a href="/index" id="navbar__logo"><i class="fas fa-dice-d20"></i>Cyber Security Co.</a>
         <div class="navbar__toggle" id="mobile-menu">
             <!-- These are the 3 bars for the mobile menu icon -->
             <span class="bar"></span>
