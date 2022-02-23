@@ -206,7 +206,7 @@
     }
 
     /* This changes the color of the assessment grades based on value */
-    var elements = document.getElementsByClassName('change-color');
+    var elements = document.querySelectorAll('.change-color');
     for (var i in elements) {
         if (elements[i].textContent == 'A') {
             elements[i].className = "colorA"
