@@ -14,6 +14,8 @@ import perscholas.casestudy.database.entity.Survey;
 import perscholas.casestudy.database.entity.Results;
 import perscholas.casestudy.database.entity.User;
 import perscholas.casestudy.form.AssessmentFormBean;
+import perscholas.casestudy.lambda.CreateAttributeName;
+
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -38,10 +40,12 @@ public class AssessmentController {
         //get questions to be displayed on assessment form
         List<Survey> questions= surveyDao.findAll();
         for (int i = 0; i < questions.size(); i++){
-            response.addObject("question" + (i + 1), questions.get(i).getQuestion());
+            //REQUIRED LAMBDA FUNCTION, creates attribute name which is
+            // used to add assessment questions to the response
+            CreateAttributeName attributeName = (n) ->  "question" + n;
+            response.addObject(attributeName.createName(i+1), questions.get(i).getQuestion());
         }
 
-        //refers to the name of the jsp file
         response.setViewName("user/assessment");
 
         return response;
