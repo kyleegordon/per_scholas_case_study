@@ -6,8 +6,8 @@
             <h3 style="color:#fff; margin-bottom: 20px; font-size: 2rem;">About</h3>
             <p class="form_table" style="font-size: 1.5rem; font-weight: normal; line-height: 1.8rem;">
                 Cyber security threats are constantly evolving, as a small business owner
-                you don't have time to keep up with the trends. Let NAMEHERE Security use
-                our expertise to protect your company so you can focus on what matter most,
+                you don't have time to keep up with the trends. Let Cyber Security Co. use
+                our expertise to protect your company, so you can focus on what matter most,
                 building your brand and providing products and service to your customers.
                 We provide a holistic set of services to meet your needs at a fair price.
                 From a sole proprietor looking for security advice to small businesses with
