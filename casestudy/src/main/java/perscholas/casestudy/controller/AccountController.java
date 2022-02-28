@@ -141,7 +141,7 @@ public class AccountController {
     @RequestMapping(value = "/deleteAccount", method = RequestMethod.GET)
     public ModelAndView deleteAccount() throws Exception {
         ModelAndView response = new ModelAndView();
-        response.setViewName("/index");
+        response.setViewName("redirect:/login/logout");
 
         //this gets username from spring security
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
